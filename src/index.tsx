@@ -10,11 +10,13 @@ import { RecordsPage } from "./pages/RecordsPage";
 import { theme } from "./theme";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <Router>
+        <ScrollToTop />
         <Flex
           sx={{
             flexDirection: "column",
