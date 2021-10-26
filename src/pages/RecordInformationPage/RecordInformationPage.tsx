@@ -10,6 +10,7 @@ import {
 import { useParams } from "react-router";
 import { RecordCards } from "../../components/RecordCards";
 import { SidebarCategories } from "../../components/SidebarCategories";
+import { SidebarSubscribeCard } from "../../components/SidebarSubscribeCard";
 import { useRecordById, useRecords } from "../../hooks/use-records";
 
 function RecordInformationPage() {
@@ -55,6 +56,9 @@ function RecordInformationPage() {
             title="Categories"
             categories={record.categories}
           />
+          <Box mt={4}>
+            <SidebarSubscribeCard />
+          </Box>
         </Box>
       </Grid>
       <Divider my={4} />
