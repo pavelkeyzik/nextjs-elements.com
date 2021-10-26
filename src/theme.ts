@@ -4,7 +4,7 @@ const theme: Theme = {
   colors: {
     text: "#fff",
     background: "#060606",
-    primary: "#266de8",
+    primary: "#5690f2",
     secondary: "#e0f",
     muted: "#191919",
     highlight: "#29112c",
@@ -17,24 +17,34 @@ const theme: Theme = {
       px: 4,
     },
   },
+  cards: {
+    primary: {
+      bg: "primary",
+    },
+    secondary: {
+      bg: "muted",
+    },
+  },
   links: {
     nav: {
       color: "white",
       textDecoration: "none",
+      transition: "color .2s",
 
       ":hover": {
-        textDecoration: "underline",
+        color: "primary",
       },
     },
   },
   buttons: {
     primary: {
-      background: "linear-gradient(to top right, #266de8, #772adb)",
+      bg: "#2d75d3",
       color: "white",
       cursor: "pointer",
       transition: "background .2s",
+
       ":hover": {
-        background: "linear-gradient(to top right, #266de8, #772adb 80%)",
+        bg: "primary",
       },
     },
     secondary: {

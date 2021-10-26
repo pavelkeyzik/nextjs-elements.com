@@ -5,9 +5,12 @@ import { RecordCards } from "../../components/RecordCards";
 import { Section } from "../../components/Section";
 import { Footer } from "../../components/Footer";
 import { useRecords } from "../../hooks/use-records";
+import { useCategories } from "../../hooks/use-categories";
+import { CaregoryCards } from "../../components/CategoryCards";
 
 function HomePage() {
   const records = useRecords();
+  const categories = useCategories();
 
   return (
     <div>
@@ -17,8 +20,8 @@ function HomePage() {
         <Section title="Latest Next.js Resources">
           <RecordCards records={records} />
         </Section>
-        <Section title="Latest Next.js Elements">
-          <RecordCards records={records} />
+        <Section title="Categories">
+          <CaregoryCards categories={categories} />
         </Section>
       </Container>
       <Footer />

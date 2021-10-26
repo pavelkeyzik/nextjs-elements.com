@@ -41,5 +41,4 @@ function useRecords() {
   return records;
 }
 
-export type { RecordModel };
 export { useRecords };

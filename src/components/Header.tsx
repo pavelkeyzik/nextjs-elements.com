@@ -20,7 +20,7 @@ function Header() {
             Categories
           </Link>
           <Link mr={3} variant="nav" href="#resources">
-            Resourced
+            Resources
           </Link>
           <Link variant="nav" href="#shop">
             Shop
