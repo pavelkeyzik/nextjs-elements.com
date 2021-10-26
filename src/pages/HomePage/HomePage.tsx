@@ -2,12 +2,12 @@ import { Container } from "@theme-ui/components";
 import { Hero } from "../../components/Hero";
 import { RecordCards } from "../../components/RecordCards";
 import { Section } from "../../components/Section";
-import { useRecords } from "../../hooks/use-records";
+import { useLastRecords } from "../../hooks/use-records";
 import { useCategories } from "../../hooks/use-categories";
 import { CaregoryCards } from "../../components/CategoryCards";
 
 function HomePage() {
-  const records = useRecords();
+  const lastRecords = useLastRecords();
   const categories = useCategories();
 
   return (
@@ -15,7 +15,7 @@ function HomePage() {
       <Hero />
       <Container py={4}>
         <Section title="Latest Next.js Resources" viewAllLink="/records">
-          <RecordCards records={records} />
+          <RecordCards records={lastRecords} />
         </Section>
         <Section title="Categories" viewAllLink="/categories">
           <CaregoryCards categories={categories} />

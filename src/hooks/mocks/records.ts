@@ -40,6 +40,52 @@ const records: RecordModel[] = [
     __v: 0,
     categories: categoires.slice(1, 4),
   },
+  {
+    _id: "21758f97dc4914fbdac503c4",
+    description: "Libris is a documentation theme",
+    coverURL:
+      "https://jamstackthemes.dev/capture/stackbit-themes-libris-nextjs.png",
+    name: "Nextjs Libris",
+    __v: 0,
+    categories: categoires.slice(1, 4),
+  },
+  {
+    _id: "11758f97dc4914fbdac503c4",
+    description: "Exto is portfolio and blog theme with a clean design.",
+    coverURL:
+      "https://jamstackthemes.dev/capture/stackbit-themes-exto-nextjs.png",
+    name: "Nextjs Exto",
+    __v: 0,
+    categories: categoires.slice(1, 4),
+  },
+  {
+    _id: "12758f97dc4914fbdac503c4",
+    description: "Planty is an e-commerce ready theme powered by Snipcart.",
+    coverURL:
+      "https://jamstackthemes.dev/capture/snipcart-stackbit-theme-planty.png",
+    name: "Planty",
+    __v: 0,
+    categories: categoires.slice(1, 4),
+  },
+  {
+    _id: "13758f97dc4914fbdac503c4",
+    description:
+      "🚀 Boilerplate and Starter for Next.js 10+, Tailwind CSS and TypeScript. The perfect Next JS Tailwind CSS template to quick start your project.",
+    coverURL:
+      "https://jamstackthemes.dev/capture/ixartz-next-js-boilerplate.png",
+    name: "Nextjs Tailwind CSS TypeScript Starter",
+    __v: 0,
+    categories: categoires.slice(1, 4),
+  },
+  {
+    _id: "14758f97dc4914fbdac503c4",
+    description: "A Nextjs theme for podcasts and music authors.",
+    coverURL:
+      "https://jamstackthemes.dev/capture/stackbit-themes-podcaster-nextjs.png",
+    name: "Nextjs Podcaster",
+    __v: 0,
+    categories: categoires.slice(1, 4),
+  },
 ];
 
 export { records };

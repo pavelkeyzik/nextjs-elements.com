@@ -4,6 +4,10 @@ function useRecords() {
   return records;
 }
 
+function useLastRecords() {
+  return records.slice(0, 4);
+}
+
 function useRecordById(id: string) {
   return records.find((record) => record._id === id);
 }
@@ -16,4 +20,4 @@ function useRecordsByCategoryId(categoryId: string) {
   });
 }
 
-export { useRecords, useRecordById, useRecordsByCategoryId };
+export { useRecords, useLastRecords, useRecordById, useRecordsByCategoryId };

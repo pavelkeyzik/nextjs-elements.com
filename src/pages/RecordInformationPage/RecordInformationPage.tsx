@@ -11,12 +11,12 @@ import { useParams } from "react-router";
 import { RecordCards } from "../../components/RecordCards";
 import { SidebarCategories } from "../../components/SidebarCategories";
 import { SidebarSubscribeCard } from "../../components/SidebarSubscribeCard";
-import { useRecordById, useRecords } from "../../hooks/use-records";
+import { useLastRecords, useRecordById } from "../../hooks/use-records";
 
 function RecordInformationPage() {
   const { id } = useParams<{ id: string }>();
   const record = useRecordById(id);
-  const records = useRecords();
+  const lastRecords = useLastRecords();
 
   if (!record) {
     return (
@@ -65,7 +65,7 @@ function RecordInformationPage() {
       <Heading as="h1" mb={3}>
         Related content
       </Heading>
-      <RecordCards records={records} />
+      <RecordCards records={lastRecords} />
     </Container>
   );
 }
