@@ -1,9 +1,7 @@
 import { Container } from "@theme-ui/components";
-import { Header } from "../../components/Header";
 import { Hero } from "../../components/Hero";
 import { RecordCards } from "../../components/RecordCards";
 import { Section } from "../../components/Section";
-import { Footer } from "../../components/Footer";
 import { useRecords } from "../../hooks/use-records";
 import { useCategories } from "../../hooks/use-categories";
 import { CaregoryCards } from "../../components/CategoryCards";
@@ -16,10 +14,10 @@ function HomePage() {
     <div>
       <Hero />
       <Container py={4}>
-        <Section title="Latest Next.js Resources">
+        <Section title="Latest Next.js Resources" viewAllLink="/records">
           <RecordCards records={records} />
         </Section>
-        <Section title="Categories">
+        <Section title="Categories" viewAllLink="/categories">
           <CaregoryCards categories={categories} />
         </Section>
       </Container>

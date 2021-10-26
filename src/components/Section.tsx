@@ -1,9 +1,11 @@
 import { PropsWithChildren } from "react";
 import { Box, Button, Flex, Text } from "@theme-ui/components";
 import { ArrowRight } from "styled-icons/feather";
+import { RouterLink } from "./RouterLink";
 
 type SectionProps = {
   title: string;
+  viewAllLink: string;
 };
 
 function Section(props: PropsWithChildren<SectionProps>) {
@@ -13,7 +15,9 @@ function Section(props: PropsWithChildren<SectionProps>) {
         <Flex sx={{ alignItems: "center", justifyContent: "space-between" }}>
           <h2>{props.title}</h2>
           <Button variant="secondary">
-            <Text mr={2}>View All</Text>
+            <RouterLink to={props.viewAllLink}>
+              <Text mr={2}>View All</Text>
+            </RouterLink>
             <ArrowRight width="16px" strokeWidth={3} />
           </Button>
         </Flex>

@@ -1,11 +1,4 @@
-import {
-  Box,
-  Container,
-  Text,
-  Flex,
-  Button,
-  IconButton,
-} from "@theme-ui/components";
+import { Box, Container, Text, Flex, IconButton } from "@theme-ui/components";
 import { Twitter, Github } from "styled-icons/feather";
 
 function Footer() {

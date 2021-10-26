@@ -1,4 +1,4 @@
-import { Flex, Heading, Link, Text } from "@theme-ui/components";
+import { Flex, Heading, Link } from "@theme-ui/components";
 import { CategoryModel } from "../typings/models/CategoryModel";
 import { RouterLink } from "./RouterLink";
 

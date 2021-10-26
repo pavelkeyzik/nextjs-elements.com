@@ -2,7 +2,7 @@ import { Container, Heading } from "@theme-ui/components";
 import { useParams } from "react-router";
 import { RecordCards } from "../../components/RecordCards";
 import { useCategoryById } from "../../hooks/use-categories";
-import { useRecords, useRecordsByCategoryId } from "../../hooks/use-records";
+import { useRecordsByCategoryId } from "../../hooks/use-records";
 
 function RecordsByCategoryPage() {
   const { id } = useParams<{ id: string }>();
