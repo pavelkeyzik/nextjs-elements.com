@@ -6,7 +6,7 @@ function Footer() {
     <Box mt={2}>
       <Container py={4}>
         <Flex sx={{ justifyContent: "space-between", alignItems: "center" }}>
-          <Text color="gray">Copyrighty &copy; 2021</Text>
+          <Text color="gray">Copyright &copy; 2021</Text>
           <Flex>
             <IconButton mr={2}>
               <Twitter width="16px" strokeWidth={3} />
