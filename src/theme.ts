@@ -42,6 +42,8 @@ const theme: Theme = {
       color: "white",
       cursor: "pointer",
       transition: "background .2s",
+      display: "flex",
+      alignItems: "center",
 
       ":hover": {
         bg: "primary",
@@ -52,9 +54,24 @@ const theme: Theme = {
       color: "#ccc",
       border: "1px solid #ccc",
       cursor: "pointer",
+      display: "flex",
+      alignItems: "center",
+      transition: "color .2s, border-color .2s",
 
       ":hover": {
         borderColor: "#fff",
+        color: "#fff",
+      },
+    },
+    icon: {
+      bg: "transparent",
+      color: "#ccc",
+      cursor: "pointer",
+      display: "flex",
+      alignItems: "center",
+      transition: "color .2s",
+
+      ":hover": {
         color: "#fff",
       },
     },

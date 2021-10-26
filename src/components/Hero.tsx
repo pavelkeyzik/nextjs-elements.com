@@ -7,7 +7,9 @@ import {
   Button,
   Paragraph,
   Heading,
+  Text,
 } from "@theme-ui/components";
+import { Mail } from "styled-icons/feather";
 import { ReactComponent as HeroIllustration } from "../assets/illustrations/hero.svg";
 
 function Hero() {
@@ -45,7 +47,8 @@ function Hero() {
                 borderBottomLeftRadius: 0,
               }}
             >
-              Subscribe
+              <Mail width="16px" strokeWidth={2} />
+              <Text ml={2}>Subscribe</Text>
             </Button>
           </Flex>
         </Box>

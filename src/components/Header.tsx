@@ -1,4 +1,12 @@
-import { Container, Button, Flex, Heading, Link } from "@theme-ui/components";
+import {
+  Container,
+  Button,
+  Flex,
+  Heading,
+  Link,
+  Text,
+} from "@theme-ui/components";
+import { Upload } from "styled-icons/feather";
 
 function Header() {
   return (
@@ -10,8 +18,11 @@ function Header() {
         }}
       >
         <Flex sx={{ alignItems: "center" }}>
-          <Heading as="h2" mr={5}>
-            Next.js Elements
+          <Heading as="h2" mr={2}>
+            Next.js
+          </Heading>
+          <Heading as="h2" sx={{ fontWeight: 200 }} mr={5}>
+            Elements
           </Heading>
           <Link mr={3} variant="nav" href="#home">
             Latest
@@ -26,7 +37,10 @@ function Header() {
             Shop
           </Link>
         </Flex>
-        <Button ml={4}>Submit Template</Button>
+        <Button ml={4}>
+          <Upload width="16px" strokeWidth={2} />
+          <Text ml={2}>Submit Template</Text>
+        </Button>
       </Flex>
     </Container>
   );
