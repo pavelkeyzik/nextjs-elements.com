@@ -16,6 +16,7 @@ function CaregoryCards(props: CaregoryCardsProps) {
           <Card
             key={category._id}
             sx={{
+              width: "100%",
               borderRadius: 4,
               overflow: "hidden",
               transition: "transform .4s",

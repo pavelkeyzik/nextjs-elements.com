@@ -1,5 +1,6 @@
-import { Flex, Heading, Text } from "@theme-ui/components";
+import { Flex, Heading, Link, Text } from "@theme-ui/components";
 import { CategoryModel } from "../typings/models/CategoryModel";
+import { RouterLink } from "./RouterLink";
 
 type SidebarCategoriesProps = {
   title: string;
@@ -14,9 +15,11 @@ function SidebarCategories(props: SidebarCategoriesProps) {
       </Heading>
       {props.categories.map((category) => {
         return (
-          <Text my={2} key={category._id}>
-            {category.name}
-          </Text>
+          <RouterLink to={`/categories/${category._id}`}>
+            <Link my={2} key={category._id}>
+              {category.name}
+            </Link>
+          </RouterLink>
         );
       })}
     </Flex>

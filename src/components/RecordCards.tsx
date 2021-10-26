@@ -18,6 +18,7 @@ function RecordCards(props: RecordCardsProps) {
             <Card
               variant="secondary"
               sx={{
+                width: "100%",
                 borderRadius: 4,
                 overflow: "hidden",
                 transition: "transform .4s",

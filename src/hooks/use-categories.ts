@@ -4,4 +4,8 @@ function useCategories() {
   return categoires;
 }
 
-export { useCategories };
+function useCategoryById(id: string) {
+  return categoires.find((category) => category._id === id);
+}
+
+export { useCategories, useCategoryById };

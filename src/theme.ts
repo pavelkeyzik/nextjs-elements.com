@@ -26,14 +26,19 @@ const theme: Theme = {
     },
   },
   links: {
-    nav: {
-      color: "white",
-      textDecoration: "none",
-      transition: "color .2s",
+    styles: {
+      a: {
+        color: "white",
+        textDecoration: "none",
+        transition: "color .2s",
 
-      ":hover": {
-        color: "primary",
+        ":hover": {
+          color: "primary",
+        },
       },
+    },
+    nav: {
+      variant: "links.styles.a",
     },
   },
   buttons: {

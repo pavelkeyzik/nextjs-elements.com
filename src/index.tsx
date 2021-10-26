@@ -4,6 +4,7 @@ import { ThemeProvider, Flex } from "theme-ui";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import { RecordInformationPage } from "./pages/RecordInformationPage";
+import { RecordsByCategoryPage } from "./pages/RecordsByCategoryPage";
 import { theme } from "./theme";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
@@ -26,6 +27,9 @@ ReactDOM.render(
             }}
           >
             <Switch>
+              <Route path="/categories/:id">
+                <RecordsByCategoryPage />
+              </Route>
               <Route path="/records/:id">
                 <RecordInformationPage />
               </Route>
