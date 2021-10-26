@@ -7,6 +7,7 @@ import { RecordInformationPage } from "./pages/RecordInformationPage";
 import { RecordsByCategoryPage } from "./pages/RecordsByCategoryPage";
 import { CategoriesPage } from "./pages/CategoriesPage";
 import { RecordsPage } from "./pages/RecordsPage";
+import { SubmitElementPage } from "./pages/SubmitElementPage";
 import { theme } from "./theme";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
@@ -42,6 +43,9 @@ ReactDOM.render(
               </Route>
               <Route path="/records">
                 <RecordsPage />
+              </Route>
+              <Route path="/submit-element">
+                <SubmitElementPage />
               </Route>
               <Route path="/">
                 <HomePage />

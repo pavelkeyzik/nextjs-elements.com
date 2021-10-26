@@ -49,6 +49,7 @@ const theme: Theme = {
       transition: "background .2s",
       display: "flex",
       alignItems: "center",
+      justifyContent: "center",
 
       ":hover": {
         bg: "primary",
@@ -61,6 +62,7 @@ const theme: Theme = {
       cursor: "pointer",
       display: "flex",
       alignItems: "center",
+      justifyContent: "center",
       transition: "color .2s, border-color .2s",
     },
     tertiary: {
@@ -70,6 +72,7 @@ const theme: Theme = {
       cursor: "pointer",
       display: "flex",
       alignItems: "center",
+      justifyContent: "center",
       transition: "color .2s, border-color .2s",
 
       ":hover": {
@@ -105,6 +108,10 @@ const theme: Theme = {
     input: {
       borderColor: "gray",
       px: 3,
+    },
+    label: {
+      fontWeight: "bold",
+      mb: 1,
     },
   },
   lineHeights: {

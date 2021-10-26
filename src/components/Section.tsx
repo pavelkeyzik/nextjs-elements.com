@@ -14,12 +14,12 @@ function Section(props: PropsWithChildren<SectionProps>) {
       <section>
         <Flex sx={{ alignItems: "center", justifyContent: "space-between" }}>
           <h2>{props.title}</h2>
-          <Button variant="tertiary">
-            <RouterLink to={props.viewAllLink}>
+          <RouterLink to={props.viewAllLink}>
+            <Button variant="tertiary" as="div">
               <Text mr={2}>View All</Text>
-            </RouterLink>
-            <ArrowRight width="16px" strokeWidth={3} />
-          </Button>
+              <ArrowRight width="16px" strokeWidth={3} />
+            </Button>
+          </RouterLink>
         </Flex>
         {props.children}
       </section>

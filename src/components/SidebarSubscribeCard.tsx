@@ -19,7 +19,7 @@ function SidebarSubscribeCard() {
       <NewsletterIllustration width="50%" height="50%" />
       <Heading mt={3}>Subscribe To Our Newsletter</Heading>
       <Input mt={3} placeholder="example@domain.com" />
-      <Button mt={2} sx={{ width: "100%", justifyContent: "center" }}>
+      <Button mt={2} sx={{ width: "100%" }}>
         <Mail width="16px" strokeWidth={2} />
         <Text ml={2}>Subscribe</Text>
       </Button>

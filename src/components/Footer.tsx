@@ -15,13 +15,15 @@ function Footer() {
         <Flex sx={{ justifyContent: "space-between", alignItems: "center" }}>
           <Text color="gray">Copyright &copy; 2021</Text>
           <Flex>
-            <Link href="https://twitter.com/pavelkeyzik" target="_blank">
-              <IconButton mr={2}>
-                <Twitter width="16px" strokeWidth={3} />
-              </IconButton>
-            </Link>
+            <Box mr={2}>
+              <Link href="https://twitter.com/pavelkeyzik" target="_blank">
+                <IconButton as="div">
+                  <Twitter width="16px" strokeWidth={3} />
+                </IconButton>
+              </Link>
+            </Box>
             <Link href="https://github.com/pavelkeyzik" target="_blank">
-              <IconButton>
+              <IconButton as="div">
                 <Github width="16px" strokeWidth={3} />
               </IconButton>
             </Link>

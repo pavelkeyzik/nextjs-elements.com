@@ -5,6 +5,7 @@ import {
   Heading,
   Link,
   Text,
+  Box,
 } from "@theme-ui/components";
 import { Upload } from "styled-icons/feather";
 import { RouterLink } from "../components/RouterLink";
@@ -19,29 +20,33 @@ function Header() {
         }}
       >
         <Flex sx={{ alignItems: "center" }}>
-          <RouterLink to="/">
-            <Heading as="h2" mr={2}>
-              Next.js
-            </Heading>
-            <Heading as="h2" sx={{ fontWeight: 200 }} mr={5}>
-              Elements
-            </Heading>
-          </RouterLink>
-          <RouterLink to="/categories">
-            <Link mr={3} variant="nav">
-              Categories
-            </Link>
-          </RouterLink>
-          <RouterLink to="/records">
-            <Link mr={3} variant="nav">
-              Resources
-            </Link>
-          </RouterLink>
+          <Box mr={5}>
+            <RouterLink to="/">
+              <Heading as="h2" mr={2}>
+                Next.js
+              </Heading>
+              <Heading as="h2" sx={{ fontWeight: 200 }}>
+                Elements
+              </Heading>
+            </RouterLink>
+          </Box>
+          <Box mr={3}>
+            <RouterLink to="/categories">
+              <Link variant="nav">Categories</Link>
+            </RouterLink>
+          </Box>
+          <Box mr={3}>
+            <RouterLink to="/records">
+              <Link variant="nav">Resources</Link>
+            </RouterLink>
+          </Box>
         </Flex>
-        <Button ml={4}>
-          <Upload width="16px" strokeWidth={2} />
-          <Text ml={2}>Submit Template</Text>
-        </Button>
+        <RouterLink to="/submit-element">
+          <Button as="div">
+            <Upload width="16px" strokeWidth={2} />
+            <Text ml={2}>Submit Element</Text>
+          </Button>
+        </RouterLink>
       </Flex>
     </Container>
   );
