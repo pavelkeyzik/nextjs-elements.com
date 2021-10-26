@@ -14,7 +14,6 @@ function HomePage() {
 
   return (
     <div>
-      <Header />
       <Hero />
       <Container py={4}>
         <Section title="Latest Next.js Resources">
@@ -24,7 +23,6 @@ function HomePage() {
           <CaregoryCards categories={categories} />
         </Section>
       </Container>
-      <Footer />
     </div>
   );
 }

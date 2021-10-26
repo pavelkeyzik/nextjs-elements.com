@@ -7,6 +7,7 @@ import {
   Text,
 } from "@theme-ui/components";
 import { Upload } from "styled-icons/feather";
+import { RouterLink } from "../components/RouterLink";
 
 function Header() {
   return (
@@ -18,12 +19,14 @@ function Header() {
         }}
       >
         <Flex sx={{ alignItems: "center" }}>
-          <Heading as="h2" mr={2}>
-            Next.js
-          </Heading>
-          <Heading as="h2" sx={{ fontWeight: 200 }} mr={5}>
-            Elements
-          </Heading>
+          <RouterLink to="/">
+            <Heading as="h2" mr={2}>
+              Next.js
+            </Heading>
+            <Heading as="h2" sx={{ fontWeight: 200 }} mr={5}>
+              Elements
+            </Heading>
+          </RouterLink>
           <Link mr={3} variant="nav" href="#home">
             Latest
           </Link>
