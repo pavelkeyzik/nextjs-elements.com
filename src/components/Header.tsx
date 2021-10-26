@@ -27,20 +27,16 @@ function Header() {
               Elements
             </Heading>
           </RouterLink>
-          <Link mr={3} variant="nav" href="#home">
-            Latest
-          </Link>
           <RouterLink to="/categories">
             <Link mr={3} variant="nav">
               Categories
             </Link>
           </RouterLink>
-          <Link mr={3} variant="nav" href="#resources">
-            Resources
-          </Link>
-          <Link variant="nav" href="#shop">
-            Shop
-          </Link>
+          <RouterLink to="/records">
+            <Link mr={3} variant="nav">
+              Resources
+            </Link>
+          </RouterLink>
         </Flex>
         <Button ml={4}>
           <Upload width="16px" strokeWidth={2} />
