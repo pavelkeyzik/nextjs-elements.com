@@ -90,6 +90,7 @@ const theme: Theme = {
   forms: {
     input: {
       borderColor: "gray",
+      px: 3,
     },
   },
   lineHeights: {
