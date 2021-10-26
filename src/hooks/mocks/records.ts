@@ -86,6 +86,26 @@ const records: RecordModel[] = [
     __v: 0,
     categories: categoires.slice(1, 4),
   },
+  {
+    _id: "15a58f97dc4914fbdac503c4",
+    description:
+      "Start your development with a Free Tailwind CSS and NextJS UI Kit and Admin. Let Notus NextJS amaze you with its cool features and build tools and get your project to a whole new level. Speed up your web development with a beautiful product made by Creative Tim . If you like bright and fresh colors, you will love this Free Tailwind CSS Template! It features a huge number of components that can help you create amazing websites.",
+    coverURL:
+      "https://s3.amazonaws.com/creativetim_bucket/products/393/original/opt_notus_nextjs_thumbnail.jpg?1602083034",
+    name: "Notus NextJS",
+    __v: 0,
+    categories: categoires.slice(1, 4),
+  },
+  {
+    _id: "16a58f97dc4914fbdac503c4",
+    description:
+      "NextJS Argon Dashboard is built with over 100 individual components, giving you the freedom of choosing and combining. All components can take variations in color, that you can easily modify using SASS files. You will save a lot of time going from prototyping to full-functional code, because all elements are implemented. This Dashboard is coming with pre-built examples, so the development process is seamless, switching from our pages to the real website is very easy to be done. Every element has multiple states for colors, styles, hover, focus, that you can easily access and use.",
+    coverURL:
+      "https://s3.amazonaws.com/creativetim_bucket/products/346/original/opt_ad_nexjs_thumbnail.jpg?1598884823",
+    name: "NextJS Argon Dashboard",
+    __v: 0,
+    categories: categoires.slice(1, 4),
+  },
 ];
 
 export { records };

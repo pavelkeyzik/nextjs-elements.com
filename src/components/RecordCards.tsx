@@ -1,4 +1,11 @@
-import { Box, Card, Grid, Image, Text } from "@theme-ui/components";
+import {
+  AspectRatio,
+  Box,
+  Card,
+  Grid,
+  Image,
+  Text,
+} from "@theme-ui/components";
 import { RecordModel } from "../typings/models/RecordModel";
 import { RouterLink } from "./RouterLink";
 
@@ -28,7 +35,9 @@ function RecordCards(props: RecordCardsProps) {
                 },
               }}
             >
-              <Image src={record.coverURL} />
+              <AspectRatio ratio={16 / 9}>
+                <Image src={record.coverURL} sx={{ objectFit: "cover" }} />
+              </AspectRatio>
               <Box p={3}>
                 <Text variant="heading">{record.name}</Text>
               </Box>
