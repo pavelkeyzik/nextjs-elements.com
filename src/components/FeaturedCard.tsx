@@ -53,7 +53,10 @@ function FeaturedCard(props: FeaturedCardProps) {
             <Heading mt={3}>{props.record.name}</Heading>
             <Paragraph mt={2}>{props.record.description}</Paragraph>
           </Box>
-          <AspectRatio ratio={16 / 9}>
+          <AspectRatio
+            ratio={16 / 9}
+            sx={{ borderRadius: 4, overflow: "hidden" }}
+          >
             <Image src={props.record.coverURL} sx={{ objectFit: "cover" }} />
           </AspectRatio>
         </Grid>
