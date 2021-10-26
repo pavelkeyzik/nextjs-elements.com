@@ -1,17 +1,21 @@
 import {
   Box,
   Container,
+  Divider,
   Grid,
   Heading,
   Image,
   Paragraph,
 } from "@theme-ui/components";
 import { useParams } from "react-router";
-import { useRecordById } from "../../hooks/use-records";
+import { RecordCards } from "../../components/RecordCards";
+import { SidebarCategories } from "../../components/SidebarCategories";
+import { useRecordById, useRecords } from "../../hooks/use-records";
 
 function RecordInformationPage() {
   const { id } = useParams<{ id: string }>();
   const record = useRecordById(id);
+  const records = useRecords();
 
   if (!record) {
     return (
@@ -46,7 +50,18 @@ function RecordInformationPage() {
           </Heading>
           <Paragraph mt={2}>{record.description}</Paragraph>
         </Box>
+        <Box>
+          <SidebarCategories
+            title="Categories"
+            categories={record.categories}
+          />
+        </Box>
       </Grid>
+      <Divider my={4} />
+      <Heading as="h1" mb={3}>
+        Related content
+      </Heading>
+      <RecordCards records={records} />
     </Container>
   );
 }

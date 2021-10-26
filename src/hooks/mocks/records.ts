@@ -1,4 +1,5 @@
 import { RecordModel } from "../../typings/models/RecordModel";
+import { categoires } from "./categories";
 
 const records: RecordModel[] = [
   {
@@ -9,6 +10,7 @@ const records: RecordModel[] = [
       "https://jamstackthemes.dev/capture/ixartz-next-js-landing-page-starter-template.png",
     name: "Next JS Landing Page Template with Tailwind CSS",
     __v: 0,
+    categories: categoires.slice(0, 2),
   },
   {
     _id: "51758f97dc4914fbdac503c4",
@@ -17,6 +19,7 @@ const records: RecordModel[] = [
       "https://jamstackthemes.dev/capture/stackbit-themes-app-nextjs.png",
     name: "Nextjs App",
     __v: 0,
+    categories: categoires.slice(1, 3),
   },
   {
     _id: "41758f97dc4914fbdac503c4",
@@ -25,6 +28,7 @@ const records: RecordModel[] = [
       "https://jamstackthemes.dev/capture/stackbit-themes-fjord-nextjs.png",
     name: "Nextjs Fjord",
     __v: 0,
+    categories: categoires.slice(2),
   },
   {
     _id: "31758f97dc4914fbdac503c4",
@@ -34,6 +38,7 @@ const records: RecordModel[] = [
       "https://jamstackthemes.dev/capture/graphcms-graphcms-commerce-starter.png",
     name: "GraphCMS eCommerce Storefront",
     __v: 0,
+    categories: categoires.slice(1, 4),
   },
 ];
 
