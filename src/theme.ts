@@ -56,6 +56,15 @@ const theme: Theme = {
     },
     secondary: {
       bg: "transparent",
+      color: "#fff",
+      border: "1px solid #fff",
+      cursor: "pointer",
+      display: "flex",
+      alignItems: "center",
+      transition: "color .2s, border-color .2s",
+    },
+    tertiary: {
+      bg: "transparent",
       color: "#ccc",
       border: "1px solid #ccc",
       cursor: "pointer",

@@ -14,7 +14,7 @@ function Section(props: PropsWithChildren<SectionProps>) {
       <section>
         <Flex sx={{ alignItems: "center", justifyContent: "space-between" }}>
           <h2>{props.title}</h2>
-          <Button variant="secondary">
+          <Button variant="tertiary">
             <RouterLink to={props.viewAllLink}>
               <Text mr={2}>View All</Text>
             </RouterLink>

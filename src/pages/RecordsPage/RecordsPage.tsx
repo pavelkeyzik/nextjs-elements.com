@@ -1,5 +1,6 @@
 import { Container, Heading } from "@theme-ui/components";
 import { RecordCards } from "../../components/RecordCards";
+import { FeaturedCard } from "../../components/FeaturedCard";
 import { useRecords } from "../../hooks/use-records";
 
 function RecordsPage() {
@@ -8,9 +9,10 @@ function RecordsPage() {
   return (
     <Container>
       <Heading as="h1" mb={3}>
-        Next.js Elements
+        Resources
       </Heading>
-      <RecordCards records={records} />
+      <FeaturedCard record={records[0]} />
+      <RecordCards records={records.slice(1)} />
     </Container>
   );
 }
