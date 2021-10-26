@@ -1,4 +1,11 @@
-import { Box, Container, Text, Flex, IconButton } from "@theme-ui/components";
+import {
+  Box,
+  Container,
+  Text,
+  Flex,
+  IconButton,
+  Link,
+} from "@theme-ui/components";
 import { Twitter, Github } from "styled-icons/feather";
 
 function Footer() {
@@ -8,12 +15,16 @@ function Footer() {
         <Flex sx={{ justifyContent: "space-between", alignItems: "center" }}>
           <Text color="gray">Copyright &copy; 2021</Text>
           <Flex>
-            <IconButton mr={2}>
-              <Twitter width="16px" strokeWidth={3} />
-            </IconButton>
-            <IconButton>
-              <Github width="16px" strokeWidth={3} />
-            </IconButton>
+            <Link href="https://twitter.com/pavelkeyzik" target="_blank">
+              <IconButton mr={2}>
+                <Twitter width="16px" strokeWidth={3} />
+              </IconButton>
+            </Link>
+            <Link href="https://github.com/pavelkeyzik" target="_blank">
+              <IconButton>
+                <Github width="16px" strokeWidth={3} />
+              </IconButton>
+            </Link>
           </Flex>
         </Flex>
       </Container>
