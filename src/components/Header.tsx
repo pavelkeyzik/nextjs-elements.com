@@ -30,9 +30,11 @@ function Header() {
           <Link mr={3} variant="nav" href="#home">
             Latest
           </Link>
-          <Link mr={3} variant="nav" href="#categories">
-            Categories
-          </Link>
+          <RouterLink to="/categories">
+            <Link mr={3} variant="nav">
+              Categories
+            </Link>
+          </RouterLink>
           <Link mr={3} variant="nav" href="#resources">
             Resources
           </Link>

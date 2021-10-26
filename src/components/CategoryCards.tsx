@@ -1,5 +1,6 @@
 import { Box, Card, Grid, Text } from "@theme-ui/components";
 import { CategoryModel } from "../typings/models/CategoryModel";
+import { RouterLink } from "./RouterLink";
 
 type CaregoryCardsProps = {
   categories: CategoryModel[];
@@ -13,24 +14,25 @@ function CaregoryCards(props: CaregoryCardsProps) {
     >
       {props.categories.map((category) => {
         return (
-          <Card
-            key={category._id}
-            sx={{
-              width: "100%",
-              borderRadius: 4,
-              overflow: "hidden",
-              transition: "transform .4s",
-              cursor: "pointer",
+          <RouterLink key={category._id} to={`/categories/${category._id}`}>
+            <Card
+              sx={{
+                width: "100%",
+                borderRadius: 4,
+                overflow: "hidden",
+                transition: "transform .4s",
+                cursor: "pointer",
 
-              ":hover": {
-                transform: "translateY(-4px)",
-              },
-            }}
-          >
-            <Box p={3}>
-              <Text variant="heading">{category.name}</Text>
-            </Box>
-          </Card>
+                ":hover": {
+                  transform: "translateY(-4px)",
+                },
+              }}
+            >
+              <Box p={3}>
+                <Text variant="heading">{category.name}</Text>
+              </Box>
+            </Card>
+          </RouterLink>
         );
       })}
     </Grid>
