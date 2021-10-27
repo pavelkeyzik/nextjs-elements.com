@@ -1,12 +1,4 @@
-import {
-  Box,
-  Grid,
-  Image,
-  Heading,
-  Paragraph,
-  Badge,
-  AspectRatio,
-} from "theme-ui";
+import { Box, Grid, Heading, Paragraph, Badge, AspectImage } from "theme-ui";
 import { RecordModel } from "../typings/models/RecordModel";
 import { RouterLink } from "./RouterLink";
 
@@ -42,12 +34,11 @@ function FeaturedCard(props: FeaturedCardProps) {
             <Heading mt={3}>{props.record.name}</Heading>
             <Paragraph mt={2}>{props.record.description}</Paragraph>
           </Box>
-          <AspectRatio
+          <AspectImage
             ratio={16 / 9}
             sx={{ borderRadius: 4, overflow: "hidden" }}
-          >
-            <Image src={props.record.coverURL} sx={{ objectFit: "cover" }} />
-          </AspectRatio>
+            src={props.record.coverURL}
+          />
         </Grid>
       </RouterLink>
     </Box>
