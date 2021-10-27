@@ -4,7 +4,7 @@ import {
   Image,
   Heading,
   Paragraph,
-  Text,
+  Badge,
   AspectRatio,
 } from "theme-ui";
 import { RecordModel } from "../typings/models/RecordModel";
@@ -38,18 +38,7 @@ function FeaturedCard(props: FeaturedCardProps) {
           }}
         >
           <Box>
-            <Box
-              bg="primary"
-              sx={{
-                display: "inline-block",
-                px: 2,
-                py: 1,
-                borderRadius: 5,
-                mb: 3,
-              }}
-            >
-              <Text>Featured Item</Text>
-            </Box>
+            <Badge bg="primary">Featured Item</Badge>
             <Heading mt={3}>{props.record.name}</Heading>
             <Paragraph mt={2}>{props.record.description}</Paragraph>
           </Box>

@@ -41,6 +41,12 @@ const theme: Theme = {
       variant: "links.styles.a",
     },
   },
+  badges: {
+    primary: {
+      px: 2,
+      py: 1,
+    },
+  },
   buttons: {
     primary: {
       bg: "#2d75d3",
