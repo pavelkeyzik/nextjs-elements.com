@@ -15,4 +15,4 @@ function CategoriesPage() {
   );
 }
 
-export { CategoriesPage };
+export default CategoriesPage;

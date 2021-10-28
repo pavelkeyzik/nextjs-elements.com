@@ -1,10 +1,10 @@
 import { Container } from "@theme-ui/components";
-import { Hero } from "../../components/Hero";
-import { RecordCards } from "../../components/RecordCards";
-import { Section } from "../../components/Section";
-import { useLastRecords } from "../../hooks/use-records";
-import { useCategories } from "../../hooks/use-categories";
-import { CaregoryCards } from "../../components/CategoryCards";
+import { Hero } from "../components/Hero";
+import { RecordCards } from "../components/RecordCards";
+import { Section } from "../components/Section";
+import { useLastRecords } from "../hooks/use-records";
+import { useCategories } from "../hooks/use-categories";
+import { CaregoryCards } from "../components/CategoryCards";
 
 function HomePage() {
   const lastRecords = useLastRecords();
@@ -25,4 +25,4 @@ function HomePage() {
   );
 }
 
-export { HomePage };
+export default HomePage;

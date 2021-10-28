@@ -1,13 +1,14 @@
 import { Container, Heading } from "@theme-ui/components";
-import { useParams } from "react-router";
+import { useRouter } from "next/router";
 import { RecordCards } from "../../components/RecordCards";
 import { useCategoryById } from "../../hooks/use-categories";
 import { useRecordsByCategoryId } from "../../hooks/use-records";
 
 function RecordsByCategoryPage() {
-  const { id } = useParams<{ id: string }>();
-  const category = useCategoryById(id);
-  const records = useRecordsByCategoryId(id);
+  const router = useRouter();
+  const { id } = router.query;
+  const category = useCategoryById(String(id));
+  const records = useRecordsByCategoryId(String(id));
 
   if (!category) {
     return (
@@ -27,4 +28,4 @@ function RecordsByCategoryPage() {
   );
 }
 
-export { RecordsByCategoryPage };
+export default RecordsByCategoryPage;

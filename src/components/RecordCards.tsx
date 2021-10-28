@@ -14,7 +14,7 @@ function RecordCards(props: RecordCardsProps) {
     >
       {props.records.map((record) => {
         return (
-          <RouterLink key={record._id} to={`/records/${record._id}`}>
+          <RouterLink key={record._id} href={`/records/${record._id}`}>
             <Card
               variant="secondary"
               sx={{

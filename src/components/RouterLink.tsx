@@ -1,11 +1,13 @@
-import { NavLink, NavLinkProps } from "react-router-dom";
+import NextLink from "next/link";
+import { Link as ThemeUILink, LinkProps } from "@theme-ui/components";
 
-function RouterLink(props: NavLinkProps) {
+function RouterLink(props: LinkProps) {
+  const { href, ...rest } = props;
+
   return (
-    <NavLink
-      style={{ display: "flex", color: "unset", textDecoration: "unset" }}
-      {...props}
-    />
+    <NextLink href={href || "#"} passHref>
+      <ThemeUILink style={{ display: "flex" }} {...rest} />
+    </NextLink>
   );
 }
 

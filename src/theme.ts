@@ -1,16 +1,19 @@
-import type { Theme } from "theme-ui";
+import type { Theme, ColorModesScale } from "theme-ui";
+import color from "color";
+
+const colors: ColorModesScale = {
+  text: "white",
+  background: "#060606",
+  primary: "#5690f2",
+  secondary: "#e0f",
+  muted: "#191919",
+  highlight: "#29112c",
+  gray: "#999",
+  purple: "#c0f",
+};
 
 const theme: Theme = {
-  colors: {
-    text: "#fff",
-    background: "#060606",
-    primary: "#5690f2",
-    secondary: "#e0f",
-    muted: "#191919",
-    highlight: "#29112c",
-    gray: "#999",
-    purple: "#c0f",
-  },
+  colors,
   layout: {
     container: {
       maxWidth: 1140,
@@ -20,15 +23,17 @@ const theme: Theme = {
   cards: {
     primary: {
       bg: "primary",
+      color: "text",
     },
     secondary: {
       bg: "muted",
+      color: "text",
     },
   },
   links: {
     styles: {
       a: {
-        color: "white",
+        color: "text",
         textDecoration: "none",
         transition: "color .2s",
 
@@ -49,8 +54,8 @@ const theme: Theme = {
   },
   buttons: {
     primary: {
-      bg: "#2d75d3",
-      color: "white",
+      bg: "primary",
+      color: "text",
       cursor: "pointer",
       transition: "background .2s",
       display: "flex",
@@ -58,13 +63,15 @@ const theme: Theme = {
       justifyContent: "center",
 
       ":hover": {
-        bg: "primary",
+        bg: color(colors.primary).darken(0.05).hex(),
       },
     },
     secondary: {
       bg: "transparent",
-      color: "#fff",
-      border: "1px solid #fff",
+      color: "text",
+      borderStyle: "solid",
+      borderWidth: 1,
+      borderColor: "text",
       cursor: "pointer",
       display: "flex",
       alignItems: "center",
@@ -73,8 +80,8 @@ const theme: Theme = {
     },
     tertiary: {
       bg: "transparent",
-      color: "#ccc",
-      border: "1px solid #ccc",
+      color: color(colors.text).darken(0.3).hex(),
+      border: `1px solid ${color(colors.text).darken(0.3).hex()}`,
       cursor: "pointer",
       display: "flex",
       alignItems: "center",
@@ -82,20 +89,20 @@ const theme: Theme = {
       transition: "color .2s, border-color .2s",
 
       ":hover": {
-        borderColor: "#fff",
-        color: "#fff",
+        borderColor: "text",
+        color: "text",
       },
     },
     icon: {
       bg: "transparent",
-      color: "#ccc",
+      color: color(colors.text).darken(0.3).hex(),
       cursor: "pointer",
       display: "flex",
       alignItems: "center",
       transition: "color .2s",
 
       ":hover": {
-        color: "#fff",
+        color: "text",
       },
     },
   },
@@ -173,6 +180,7 @@ const theme: Theme = {
     },
     a: {
       color: "primary",
+
       "&:hover": {
         color: "secondary",
       },
@@ -230,23 +238,6 @@ const theme: Theme = {
       maxWidth: "100%",
     },
   },
-  // "prism": {
-  //   ".comment,.prolog,.doctype,.cdata,.punctuation,.operator,.entity,.url": {
-  //     "color": "gray"
-  //   },
-  //   ".comment": {
-  //     "fontStyle": "italic"
-  //   },
-  //   ".property,.tag,.boolean,.number,.constant,.symbol,.deleted,.function,.class-name,.regex,.important,.variable": {
-  //     "color": "purple"
-  //   },
-  //   ".atrule,.attr-value,.keyword": {
-  //     "color": "primary"
-  //   },
-  //   ".selector,.attr-name,.string,.char,.builtin,.inserted": {
-  //     "color": "secondary"
-  //   }
-  // }
 };
 
 export { theme };

@@ -21,7 +21,7 @@ function Header() {
       >
         <Flex sx={{ alignItems: "center" }}>
           <Box mr={5}>
-            <RouterLink to="/">
+            <RouterLink href="/">
               <Heading as="h2" mr={2}>
                 Next.js
               </Heading>
@@ -31,17 +31,17 @@ function Header() {
             </RouterLink>
           </Box>
           <Box mr={3}>
-            <RouterLink to="/categories">
+            <RouterLink href="/categories">
               <Link variant="nav">Categories</Link>
             </RouterLink>
           </Box>
           <Box mr={3}>
-            <RouterLink to="/records">
+            <RouterLink href="/records">
               <Link variant="nav">Resources</Link>
             </RouterLink>
           </Box>
         </Flex>
-        <RouterLink to="/submit-element">
+        <RouterLink href="/submit-element">
           <Button as="div">
             <Upload width="16px" strokeWidth={2} />
             <Text ml={2}>Submit Element</Text>

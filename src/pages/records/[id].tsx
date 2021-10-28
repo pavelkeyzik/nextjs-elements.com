@@ -7,15 +7,16 @@ import {
   Image,
   Paragraph,
 } from "@theme-ui/components";
-import { useParams } from "react-router";
+import { useRouter } from "next/router";
 import { RecordCards } from "../../components/RecordCards";
 import { SidebarCategories } from "../../components/SidebarCategories";
 import { SidebarSubscribeCard } from "../../components/SidebarSubscribeCard";
 import { useLastRecords, useRecordById } from "../../hooks/use-records";
 
 function RecordInformationPage() {
-  const { id } = useParams<{ id: string }>();
-  const record = useRecordById(id);
+  const router = useRouter();
+  const { id } = router.query;
+  const record = useRecordById(String(id));
   const lastRecords = useLastRecords();
 
   if (!record) {
@@ -28,7 +29,7 @@ function RecordInformationPage() {
 
   return (
     <Container>
-      <Grid columns="2fr 1fr" gap={5}>
+      <Grid columns={["1fr", "1fr", "2fr 1fr"]} gap={5}>
         <Box>
           <Box
             sx={{
@@ -70,4 +71,4 @@ function RecordInformationPage() {
   );
 }
 
-export { RecordInformationPage };
+export default RecordInformationPage;

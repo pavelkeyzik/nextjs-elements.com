@@ -17,4 +17,4 @@ function RecordsPage() {
   );
 }
 
-export { RecordsPage };
+export default RecordsPage;
