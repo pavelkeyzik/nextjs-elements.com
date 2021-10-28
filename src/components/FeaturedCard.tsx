@@ -9,7 +9,7 @@ type FeaturedCardProps = {
 function FeaturedCard(props: FeaturedCardProps) {
   return (
     <Box mb={5}>
-      <RouterLink to={`/records/${props.record._id}`}>
+      <RouterLink href={`/records/${props.record._id}`}>
         <Grid
           gap={4}
           columns={["1fr", "1fr", "1fr 1fr"]}

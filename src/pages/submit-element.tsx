@@ -39,4 +39,4 @@ function SubmitElementPage() {
   );
 }
 
-export { SubmitElementPage };
+export default SubmitElementPage;

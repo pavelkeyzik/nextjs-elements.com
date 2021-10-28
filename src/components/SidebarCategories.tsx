@@ -15,7 +15,7 @@ function SidebarCategories(props: SidebarCategoriesProps) {
       </Heading>
       {props.categories.map((category) => {
         return (
-          <RouterLink to={`/categories/${category._id}`}>
+          <RouterLink href={`/categories/${category._id}`}>
             <Link my={2} key={category._id}>
               {category.name}
             </Link>

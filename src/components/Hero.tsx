@@ -9,8 +9,8 @@ import {
   Heading,
   Text,
 } from "@theme-ui/components";
+import Image from "next/image";
 import { Mail } from "styled-icons/feather";
-import { ReactComponent as HeroIllustration } from "../assets/illustrations/hero.svg";
 
 function Hero() {
   return (
@@ -57,9 +57,14 @@ function Hero() {
             alignItems: "center",
             justifyContent: "flex-end",
             display: ["none", "flex"],
+            height: "100%",
           }}
         >
-          <HeroIllustration width="70%" height="70%" />
+          <Image
+            src="/assets/illustrations/hero.svg"
+            width={400}
+            height={400}
+          />
         </Box>
       </Grid>
     </Container>
