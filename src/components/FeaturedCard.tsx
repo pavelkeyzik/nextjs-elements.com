@@ -34,11 +34,14 @@ function FeaturedCard(props: FeaturedCardProps) {
             <Heading mt={3}>{props.record.name}</Heading>
             <Paragraph mt={2}>{props.record.description}</Paragraph>
           </Box>
-          <AspectImage
-            ratio={16 / 9}
-            sx={{ borderRadius: 4, overflow: "hidden" }}
-            src={props.record.coverURL}
-          />
+          <Box
+            style={{
+              borderRadius: 4,
+              overflow: "hidden",
+            }}
+          >
+            <AspectImage ratio={16 / 9} src={props.record.coverURL} />
+          </Box>
         </Grid>
       </RouterLink>
     </Box>
