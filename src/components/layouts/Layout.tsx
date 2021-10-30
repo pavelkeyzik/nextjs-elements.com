@@ -1,4 +1,5 @@
 import { PropsWithChildren } from "react";
+import Head from "next/head";
 import { Flex } from "@theme-ui/components";
 import { Header } from "../Header";
 import { Footer } from "../Footer";
@@ -11,6 +12,9 @@ function Layout(props: PropsWithChildren<unknown>) {
         minHeight: "100vh",
       }}
     >
+      <Head>
+        <title>Next.js Templates | Free Templates and UI kits</title>
+      </Head>
       <Header />
       <Flex
         sx={{
