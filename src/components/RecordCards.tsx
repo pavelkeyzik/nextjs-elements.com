@@ -7,6 +7,10 @@ type RecordCardsProps = {
 };
 
 function RecordCards(props: RecordCardsProps) {
+  if (!props.records) {
+    return null;
+  }
+
   return (
     <Grid
       gap={4}
@@ -14,7 +18,7 @@ function RecordCards(props: RecordCardsProps) {
     >
       {props.records.map((record) => {
         return (
-          <RouterLink key={record._id} href={`/records/${record._id}`}>
+          <RouterLink key={record.id} href={`/records/${record.id}`}>
             <Card
               variant="secondary"
               sx={{
@@ -28,7 +32,7 @@ function RecordCards(props: RecordCardsProps) {
                 },
               }}
             >
-              <AspectImage ratio={16 / 9} src={record.coverURL} />
+              <AspectImage ratio={16 / 9} src={record.cover_url} />
               <Box p={3}>
                 <Text variant="heading">{record.name}</Text>
               </Box>

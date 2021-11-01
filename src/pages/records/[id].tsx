@@ -7,19 +7,19 @@ import {
   Image,
   Paragraph,
 } from "@theme-ui/components";
-import { useRouter } from "next/router";
+import { api } from "../../api";
 import { RecordCards } from "../../components/RecordCards";
 import { SidebarCategories } from "../../components/SidebarCategories";
 import { SidebarSubscribeCard } from "../../components/SidebarSubscribeCard";
-import { useLastRecords, useRecordById } from "../../hooks/use-records";
+import { RecordModel } from "../../typings/models/RecordModel";
 
-function RecordInformationPage() {
-  const router = useRouter();
-  const { id } = router.query;
-  const record = useRecordById(String(id));
-  const lastRecords = useLastRecords();
+type RecordInformationPageProps = {
+  record: RecordModel;
+  lastRecords: RecordModel[];
+};
 
-  if (!record) {
+function RecordInformationPage(props: RecordInformationPageProps) {
+  if (!props.record) {
     return (
       <Container>
         <Heading>Page Not Found</Heading>
@@ -41,21 +41,21 @@ function RecordInformationPage() {
             }}
           >
             <Image
-              src={record.coverURL}
+              src={props.record.cover_url}
               sx={{
                 verticalAlign: "middle",
               }}
             />
           </Box>
           <Heading as="h1" my={3}>
-            {record.name}
+            {props.record.name}
           </Heading>
-          <Paragraph mt={2}>{record.description}</Paragraph>
+          <Paragraph mt={2}>{props.record.description}</Paragraph>
         </Box>
         <Box>
           <SidebarCategories
             title="Categories"
-            categories={record.categories}
+            categories={props.record.categories}
           />
           <Box mt={4}>
             <SidebarSubscribeCard />
@@ -66,9 +66,29 @@ function RecordInformationPage() {
       <Heading as="h1" mb={3}>
         Related content
       </Heading>
-      <RecordCards records={lastRecords} />
+      <RecordCards records={props.lastRecords} />
     </Container>
   );
+}
+
+export async function getStaticPaths() {
+  const records = await api.getAllRecords();
+
+  // Get the paths we want to pre-render based on posts
+  const paths = records.map((record) => ({
+    params: { id: String(record.id) },
+  }));
+
+  return { paths, fallback: "blocking" };
+}
+
+export async function getStaticProps({ params }: any) {
+  const record = await api.getRecordById(params.id);
+  const lastRecords = await api.getLastRecords();
+
+  return {
+    props: { record, lastRecords },
+  };
 }
 
 export default RecordInformationPage;

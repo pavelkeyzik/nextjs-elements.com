@@ -1,10 +1,9 @@
 import { CategoryModel } from "./CategoryModel";
 
 export type RecordModel = {
-  _id: string;
-  __v: number;
+  id: number;
   name: string;
-  coverURL: string;
+  cover_url: string;
   description: string;
   categories: CategoryModel[];
 };

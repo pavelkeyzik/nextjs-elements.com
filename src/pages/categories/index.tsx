@@ -1,18 +1,30 @@
 import { Container, Heading } from "@theme-ui/components";
+import { api } from "../../api";
 import { CaregoryCards } from "../../components/CategoryCards";
-import { useCategories } from "../../hooks/use-categories";
+import { CategoryModel } from "../../typings/models/CategoryModel";
 
-function CategoriesPage() {
-  const categories = useCategories();
+type CategoriesPageProps = {
+  categories: CategoryModel[];
+};
 
+function CategoriesPage(props: CategoriesPageProps) {
   return (
     <Container>
       <Heading as="h1" mb={3}>
         Categories
       </Heading>
-      <CaregoryCards categories={categories} />
+      <CaregoryCards categories={props.categories} />
     </Container>
   );
+}
+
+export async function getStaticProps() {
+  const categories = await api.getAllCategories();
+
+  return {
+    props: { categories },
+    revalidate: 1,
+  };
 }
 
 export default CategoriesPage;

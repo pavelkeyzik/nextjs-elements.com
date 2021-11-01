@@ -7,6 +7,10 @@ type CaregoryCardsProps = {
 };
 
 function CaregoryCards(props: CaregoryCardsProps) {
+  if (!props.categories) {
+    return null;
+  }
+
   return (
     <Grid
       gap={4}
@@ -14,7 +18,7 @@ function CaregoryCards(props: CaregoryCardsProps) {
     >
       {props.categories.map((category) => {
         return (
-          <RouterLink key={category._id} href={`/categories/${category._id}`}>
+          <RouterLink key={category.id} href={`/categories/${category.id}`}>
             <Card
               sx={{
                 width: "100%",

@@ -1,16 +1,14 @@
 import { Container, Heading } from "@theme-ui/components";
-import { useRouter } from "next/router";
+import { api } from "../../api";
 import { RecordCards } from "../../components/RecordCards";
-import { useCategoryById } from "../../hooks/use-categories";
-import { useRecordsByCategoryId } from "../../hooks/use-records";
+import { CategoryModel } from "../../typings/models/CategoryModel";
 
-function RecordsByCategoryPage() {
-  const router = useRouter();
-  const { id } = router.query;
-  const category = useCategoryById(String(id));
-  const records = useRecordsByCategoryId(String(id));
+type RecordsByCategoryPageProps = {
+  category: CategoryModel;
+};
 
-  if (!category) {
+function RecordsByCategoryPage(props: RecordsByCategoryPageProps) {
+  if (!props.category) {
     return (
       <Container>
         <Heading>Page Not Found</Heading>
@@ -21,11 +19,30 @@ function RecordsByCategoryPage() {
   return (
     <Container>
       <Heading as="h1" mb={3}>
-        {category.name}
+        {props.category.name}
       </Heading>
-      <RecordCards records={records} />
+      <RecordCards records={props.category.records} />
     </Container>
   );
+}
+
+export async function getStaticPaths() {
+  const categories = await api.getAllCategories();
+
+  // Get the paths we want to pre-render based on posts
+  const paths = categories.map((category) => ({
+    params: { id: String(category.id) },
+  }));
+
+  return { paths, fallback: "blocking" };
+}
+
+export async function getStaticProps({ params }: any) {
+  const category = await api.getCategory(params.id);
+
+  return {
+    props: { category },
+  };
 }
 
 export default RecordsByCategoryPage;
