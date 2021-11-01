@@ -68,7 +68,7 @@ function RecordInformationPage(props: RecordInformationPageProps) {
                 a(props) {
                   const { ref, ...rest } = props;
 
-                  return <Link variant="markdown" {...rest} />;
+                  return <Link variant="markdown" target="_blank" {...rest} />;
                 },
               }}
             >
