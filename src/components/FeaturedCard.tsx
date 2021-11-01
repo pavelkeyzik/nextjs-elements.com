@@ -7,6 +7,10 @@ type FeaturedCardProps = {
 };
 
 function FeaturedCard(props: FeaturedCardProps) {
+  if (!props.record) {
+    return null;
+  }
+
   return (
     <Box mb={5}>
       <RouterLink href={`/records/${props.record.id}`}>

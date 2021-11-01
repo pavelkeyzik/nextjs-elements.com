@@ -9,8 +9,12 @@ import {
   Paragraph,
 } from "@theme-ui/components";
 import { Upload } from "styled-icons/feather";
-
+import { config } from "../config";
 function SubmitElementPage() {
+  if (!config.features.submitElementEnabled) {
+    return <Container>This feature is not ready yet</Container>;
+  }
+
   return (
     <Container>
       <Box sx={{ borderRadius: 4, p: 3, mb: 3 }}>
