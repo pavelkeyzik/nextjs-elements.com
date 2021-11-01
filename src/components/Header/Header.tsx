@@ -87,12 +87,14 @@ function Header() {
                     </Box>
                   );
                 })}
-                <RouterLink href="/submit-element" onClick={state.closeMenu}>
-                  <Button as="div" sx={{ flexShrink: 0 }}>
-                    <Upload width="16px" strokeWidth={2} />
-                    <Text ml={2}>Submit Element</Text>
-                  </Button>
-                </RouterLink>
+                <Flex sx={{ flexShrink: 0 }}>
+                  <RouterLink href="/submit-element" onClick={state.closeMenu}>
+                    <Button as="div">
+                      <Upload width="16px" strokeWidth={2} />
+                      <Text ml={2}>Submit Element</Text>
+                    </Button>
+                  </RouterLink>
+                </Flex>
               </Flex>
             </Container>
           </NavigationMobile>
