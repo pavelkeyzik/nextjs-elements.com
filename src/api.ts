@@ -23,16 +23,16 @@ function getStrapiMedia(media: { url: string }) {
 
 const api = {
   async getAllCategories(): Promise<CategoryModel[]> {
-    return await fetchAPI("/categories");
+    return await fetchAPI("/categories?_sort=created_at:DESC");
   },
   async getCategory(categoryId: number): Promise<CategoryModel> {
     return await fetchAPI(`/categories/${categoryId}`);
   },
   async getAllRecords(): Promise<RecordModel[]> {
-    return await fetchAPI("/records");
+    return await fetchAPI("/records?_sort=created_at:DESC");
   },
   async getLastRecords(): Promise<RecordModel[]> {
-    return await fetchAPI("/records?_limit=4");
+    return await fetchAPI("/records?_sort=created_at:DESC,_limit=4");
   },
   async getRecordById(id: number): Promise<RecordModel> {
     return await fetchAPI(`/records/${id}`);
