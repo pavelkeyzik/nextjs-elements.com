@@ -5,5 +5,6 @@ export type RecordModel = {
   name: string;
   cover_url: string;
   description: string;
+  text: string;
   categories: CategoryModel[];
 };

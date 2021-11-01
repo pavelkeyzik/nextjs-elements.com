@@ -5,8 +5,8 @@ import {
   Grid,
   Heading,
   Image,
-  Paragraph,
 } from "@theme-ui/components";
+import ReactMarkdown from "react-markdown";
 import { api } from "../../api";
 import { RecordCards } from "../../components/RecordCards";
 import { SidebarCategories } from "../../components/SidebarCategories";
@@ -50,7 +50,25 @@ function RecordInformationPage(props: RecordInformationPageProps) {
           <Heading as="h1" my={3}>
             {props.record.name}
           </Heading>
-          <Paragraph mt={2}>{props.record.description}</Paragraph>
+          <Box mt={2}>
+            <ReactMarkdown
+              components={{
+                img(props) {
+                  return (
+                    <Box sx={{ width: "100%" }}>
+                      <img
+                        {...props}
+                        style={{ objectFit: "contain", width: "100%" }}
+                        src={api.getImageLink(props.src)}
+                      />
+                    </Box>
+                  );
+                },
+              }}
+            >
+              {props.record.text}
+            </ReactMarkdown>
+          </Box>
         </Box>
         <Box>
           <SidebarCategories

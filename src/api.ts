@@ -37,6 +37,9 @@ const api = {
   async getRecordById(id: number): Promise<RecordModel> {
     return await fetchAPI(`/records/${id}`);
   },
+  getImageLink(path?: string) {
+    return getStrapiURL(path);
+  },
 };
 
 export { api };
