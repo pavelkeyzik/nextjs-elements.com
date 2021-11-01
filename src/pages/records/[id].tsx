@@ -112,6 +112,7 @@ export async function getStaticProps({ params }: any) {
 
   return {
     props: { record, lastRecords },
+    revalidate: 20,
   };
 }
 

@@ -34,6 +34,7 @@ export async function getStaticProps() {
 
   return {
     props: { categories, lastRecords },
+    revalidate: 20,
   };
 }
 
