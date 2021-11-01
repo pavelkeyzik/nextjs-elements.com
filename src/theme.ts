@@ -45,6 +45,14 @@ const theme: Theme = {
     nav: {
       variant: "links.styles.a",
     },
+    markdown: {
+      variant: "links.styles.a",
+      color: "primary",
+
+      ":hover": {
+        textDecoration: "underline",
+      },
+    },
   },
   badges: {
     primary: {

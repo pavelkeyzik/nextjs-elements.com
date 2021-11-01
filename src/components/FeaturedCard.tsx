@@ -1,4 +1,5 @@
 import { Box, Grid, Heading, Paragraph, Badge, AspectImage } from "theme-ui";
+import { api } from "../api";
 import { RecordModel } from "../typings/models/RecordModel";
 import { RouterLink } from "./RouterLink";
 
@@ -44,7 +45,12 @@ function FeaturedCard(props: FeaturedCardProps) {
               overflow: "hidden",
             }}
           >
-            <AspectImage ratio={16 / 9} src={props.record.cover_url} />
+            <AspectImage
+              ratio={16 / 9}
+              src={api.getImageLink(
+                props.record.media[0]?.formats?.medium?.url
+              )}
+            />
           </Box>
         </Grid>
       </RouterLink>

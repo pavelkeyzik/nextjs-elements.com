@@ -1,4 +1,5 @@
 import { AspectImage, Box, Card, Grid, Text } from "@theme-ui/components";
+import { api } from "../api";
 import { RecordModel } from "../typings/models/RecordModel";
 import { RouterLink } from "./RouterLink";
 
@@ -32,7 +33,10 @@ function RecordCards(props: RecordCardsProps) {
                 },
               }}
             >
-              <AspectImage ratio={16 / 9} src={record.cover_url} />
+              <AspectImage
+                ratio={16 / 9}
+                src={api.getImageLink(record.media[0]?.formats?.thumbnail?.url)}
+              />
               <Box p={3}>
                 <Text variant="heading">{record.name}</Text>
               </Box>

@@ -5,6 +5,7 @@ import {
   Grid,
   Heading,
   Image,
+  Link,
 } from "@theme-ui/components";
 import ReactMarkdown from "react-markdown";
 import { api } from "../../api";
@@ -41,7 +42,7 @@ function RecordInformationPage(props: RecordInformationPageProps) {
             }}
           >
             <Image
-              src={props.record.cover_url}
+              src={api.getImageLink(props.record.media[0]?.formats?.large?.url)}
               sx={{
                 verticalAlign: "middle",
               }}
@@ -63,6 +64,11 @@ function RecordInformationPage(props: RecordInformationPageProps) {
                       />
                     </Box>
                   );
+                },
+                a(props) {
+                  const { ref, ...rest } = props;
+
+                  return <Link variant="markdown" {...rest} />;
                 },
               }}
             >
