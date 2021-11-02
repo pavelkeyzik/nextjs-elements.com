@@ -1,4 +1,4 @@
-import { Box, Card, Grid, Text } from "@theme-ui/components";
+import { Badge, Box, Card, Flex, Grid, Text } from "@theme-ui/components";
 import { CategoryModel } from "../typings/models/CategoryModel";
 import { RouterLink } from "./RouterLink";
 
@@ -32,9 +32,13 @@ function CaregoryCards(props: CaregoryCardsProps) {
                 },
               }}
             >
-              <Box p={3}>
+              <Flex
+                p={3}
+                sx={{ justifyContent: "space-between", alignItems: "center" }}
+              >
                 <Text variant="heading">{category.name}</Text>
-              </Box>
+                <Badge variant="secondary">{category.records.length}</Badge>
+              </Flex>
             </Card>
           </RouterLink>
         );

@@ -32,7 +32,7 @@ const api = {
     return await fetchAPI("/records?_sort=created_at:DESC");
   },
   async getLastRecords(): Promise<RecordModel[]> {
-    return await fetchAPI("/records?_sort=created_at:DESC,_limit=4");
+    return await fetchAPI("/records?_sort=created_at:DESC&_limit=4");
   },
   async getRecordById(id: number): Promise<RecordModel> {
     return await fetchAPI(`/records/${id}`);

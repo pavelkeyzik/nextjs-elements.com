@@ -59,6 +59,12 @@ const theme: Theme = {
       px: 2,
       py: 1,
     },
+    secondary: {
+      px: 2,
+      bg: "text",
+      color: "primary",
+      borderRadius: 100,
+    },
   },
   buttons: {
     primary: {
