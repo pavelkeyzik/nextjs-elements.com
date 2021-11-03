@@ -19,7 +19,7 @@ function RecordsByCategoryPage(props: RecordsByCategoryPageProps) {
   return (
     <Container>
       <Heading as="h1" mb={3}>
-        {props.category.name}
+        {props.category.nameFormatted}
       </Heading>
       <RecordCards records={props.category.records} />
     </Container>

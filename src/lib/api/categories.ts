@@ -1,4 +1,5 @@
 import { CategoryDTO, CategoryWithRecordsDTO } from "../dto/CategoryDTO";
+import { formatCategoryName } from "../formatters";
 import { getAllRecords, getRecordsByCategory } from "./records";
 
 function uniq(a: string[]) {
@@ -23,6 +24,7 @@ function getAllCategories() {
 function getCategoryByName(categoryName: string): CategoryWithRecordsDTO {
   return {
     name: categoryName,
+    nameFormatted: formatCategoryName(categoryName),
     records: getRecordsByCategory(categoryName),
   };
 }

@@ -37,9 +37,7 @@ function CaregoryCards(props: CaregoryCardsProps) {
                 p={3}
                 sx={{ justifyContent: "space-between", alignItems: "center" }}
               >
-                <Text variant="heading">
-                  {formatCategoryName(category.name)}
-                </Text>
+                <Text variant="heading">{category.nameFormatted}</Text>
                 <Badge variant="secondary">{category.records.length}</Badge>
               </Flex>
             </Card>
