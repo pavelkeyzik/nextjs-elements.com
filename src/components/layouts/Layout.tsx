@@ -14,7 +14,7 @@ function Layout(props: PropsWithChildren<unknown>) {
     >
       <Head>
         <title>Next.js Templates | Free Templates and UI kits</title>
-        <link rel="sortcut icon" href="favicon.ico" />
+        <link rel="sortcut icon" href="/favicon.ico" />
       </Head>
       <Header />
       <Flex

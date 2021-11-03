@@ -1,7 +1,7 @@
 import { RecordModel } from "./RecordModel";
 
 export type CategoryModel = {
-  id: number;
+  _id: string;
   name: string;
   records: RecordModel[];
 };

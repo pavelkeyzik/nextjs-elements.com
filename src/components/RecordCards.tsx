@@ -19,7 +19,7 @@ function RecordCards(props: RecordCardsProps) {
     >
       {props.records.map((record) => {
         return (
-          <RouterLink key={record.id} href={`/records/${record.id}`}>
+          <RouterLink key={record._id} href={`/records/${record._id}`}>
             <Card
               variant="secondary"
               sx={{
@@ -35,7 +35,7 @@ function RecordCards(props: RecordCardsProps) {
             >
               <AspectImage
                 ratio={16 / 9}
-                src={api.getImageLink(record.media[0]?.formats?.thumbnail?.url)}
+                src={api.getImageLink(record.cover?.formats?.thumbnail?.url)}
               />
               <Box p={3}>
                 <Text variant="heading">{record.name}</Text>

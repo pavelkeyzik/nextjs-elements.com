@@ -14,7 +14,7 @@ function FeaturedCard(props: FeaturedCardProps) {
 
   return (
     <Box mb={5}>
-      <RouterLink href={`/records/${props.record.id}`}>
+      <RouterLink href={`/records/${props.record._id}`}>
         <Grid
           gap={4}
           columns={["1fr", "1fr", "1fr 1fr"]}
@@ -47,9 +47,7 @@ function FeaturedCard(props: FeaturedCardProps) {
           >
             <AspectImage
               ratio={16 / 9}
-              src={api.getImageLink(
-                props.record.media[0]?.formats?.medium?.url
-              )}
+              src={api.getImageLink(props.record.cover?.formats?.medium?.url)}
             />
           </Box>
         </Grid>

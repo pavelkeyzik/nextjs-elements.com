@@ -1,31 +1,12 @@
 import { CategoryModel } from "./CategoryModel";
-
-type MediaType = {
-  id: number;
-  name: string;
-  alternativeText: string;
-  url: string;
-  formats: {
-    thumbnail: {
-      url: string;
-    };
-    large: {
-      url: string;
-    };
-    medium: {
-      url: string;
-    };
-    small: {
-      url: string;
-    };
-  };
-};
+import { MediaModel } from "./MediaModel";
 
 export type RecordModel = {
-  id: number;
+  _id: string;
   name: string;
   description: string;
   text: string;
-  media: MediaType[];
+  media: MediaModel[];
+  cover: MediaModel;
   categories: CategoryModel[];
 };

@@ -31,13 +31,14 @@ export async function getStaticPaths() {
 
   // Get the paths we want to pre-render based on posts
   const paths = categories.map((category) => ({
-    params: { id: String(category.id) },
+    params: { id: category._id },
   }));
 
   return { paths, fallback: "blocking" };
 }
 
 export async function getStaticProps({ params }: any) {
+  console.log(params.id);
   const category = await api.getCategory(params.id);
 
   return {

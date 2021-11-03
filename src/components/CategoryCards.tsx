@@ -18,7 +18,7 @@ function CaregoryCards(props: CaregoryCardsProps) {
     >
       {props.categories.map((category) => {
         return (
-          <RouterLink key={category.id} href={`/categories/${category.id}`}>
+          <RouterLink key={category._id} href={`/categories/${category._id}`}>
             <Card
               sx={{
                 width: "100%",
