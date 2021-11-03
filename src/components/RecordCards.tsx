@@ -1,5 +1,4 @@
 import { AspectImage, Box, Card, Grid, Text } from "@theme-ui/components";
-import { api } from "../api";
 import { RecordDTO } from "../lib/dto/RecordDTO";
 import { RouterLink } from "./RouterLink";
 

@@ -1,8 +1,6 @@
 import { Box, IconButton } from "@theme-ui/components";
 import { X } from "styled-icons/feather";
-import { api } from "../../api";
 import { MediaDTO } from "../../lib/dto/MediaDTO";
-import { MediaModel } from "../../typings/models/MediaModel";
 
 type PreviewModalProps = {
   visible?: boolean;

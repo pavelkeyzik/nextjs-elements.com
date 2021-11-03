@@ -1,5 +1,4 @@
 import { Box, Grid, Heading, Paragraph, Badge, AspectImage } from "theme-ui";
-import { api } from "../api";
 import { RecordDTO } from "../lib/dto/RecordDTO";
 import { RouterLink } from "./RouterLink";
 
