@@ -1,10 +1,23 @@
 import { CategoryDTO, CategoryWithRecordsDTO } from "../dto/CategoryDTO";
-import { getRecordsByCategory } from "./records";
+import { getAllRecords, getRecordsByCategory } from "./records";
 
-const categoryNames: CategoryDTO[] = ["blog"];
+function uniq(a: string[]) {
+  var seen: { [key: string]: boolean } = {};
+  return a.filter(function (item) {
+    return seen.hasOwnProperty(item) ? false : (seen[item] = true);
+  });
+}
+
+function getCategoryNames(): CategoryDTO[] {
+  return getAllRecords()
+    .map((record) => record.categories)
+    .reduce((previousValue, currentValue) => {
+      return uniq([...previousValue, ...currentValue]);
+    }, []);
+}
 
 function getAllCategories() {
-  return categoryNames.map(getCategoryByName);
+  return getCategoryNames().map(getCategoryByName);
 }
 
 function getCategoryByName(categoryName: string): CategoryWithRecordsDTO {
