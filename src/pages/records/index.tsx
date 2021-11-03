@@ -1,11 +1,11 @@
 import { Container, Heading } from "@theme-ui/components";
 import { RecordCards } from "../../components/RecordCards";
 import { FeaturedCard } from "../../components/FeaturedCard";
-import { api } from "../../api";
-import { RecordModel } from "../../typings/models/RecordModel";
+import { getAllRecords } from "../../lib/api/records";
+import { RecordDTO } from "../../lib/dto/RecordDTO";
 
 type RecordsPageProps = {
-  records: RecordModel[];
+  records: RecordDTO[];
 };
 
 function RecordsPage(props: RecordsPageProps) {
@@ -21,7 +21,7 @@ function RecordsPage(props: RecordsPageProps) {
 }
 
 export async function getStaticProps() {
-  const records = await api.getAllRecords();
+  const records = getAllRecords();
 
   return {
     props: { records },

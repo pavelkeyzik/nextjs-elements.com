@@ -1,10 +1,10 @@
 import { AspectImage, Box, Card, Grid, Text } from "@theme-ui/components";
 import { api } from "../api";
-import { RecordModel } from "../typings/models/RecordModel";
+import { RecordDTO } from "../lib/dto/RecordDTO";
 import { RouterLink } from "./RouterLink";
 
 type RecordCardsProps = {
-  records: RecordModel[];
+  records: RecordDTO[];
 };
 
 function RecordCards(props: RecordCardsProps) {
@@ -19,7 +19,7 @@ function RecordCards(props: RecordCardsProps) {
     >
       {props.records.map((record) => {
         return (
-          <RouterLink key={record._id} href={`/records/${record._id}`}>
+          <RouterLink key={record.slug} href={`/records/${record.slug}`}>
             <Card
               variant="secondary"
               sx={{
@@ -33,12 +33,9 @@ function RecordCards(props: RecordCardsProps) {
                 },
               }}
             >
-              <AspectImage
-                ratio={16 / 9}
-                src={api.getImageLink(record.cover?.formats?.thumbnail?.url)}
-              />
+              <AspectImage ratio={16 / 9} src={record.cover_url} />
               <Box p={3}>
-                <Text variant="heading">{record.name}</Text>
+                <Text variant="heading">{record.title}</Text>
               </Box>
             </Card>
           </RouterLink>

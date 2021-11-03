@@ -3,13 +3,14 @@ import { Hero } from "../components/Hero";
 import { RecordCards } from "../components/RecordCards";
 import { Section } from "../components/Section";
 import { CaregoryCards } from "../components/CategoryCards";
-import { api } from "../api";
-import { CategoryModel } from "../typings/models/CategoryModel";
-import { RecordModel } from "../typings/models/RecordModel";
+import { getAllRecords } from "../lib/api/records";
+import { RecordDTO } from "../lib/dto/RecordDTO";
+import { CategoryWithRecordsDTO } from "../lib/dto/CategoryDTO";
+import { getAllCategories } from "../lib/api/categories";
 
 type HomePageProps = {
-  categories: CategoryModel[];
-  lastRecords: RecordModel[];
+  categories: CategoryWithRecordsDTO[];
+  lastRecords: RecordDTO[];
 };
 
 function HomePage(props: HomePageProps) {
@@ -29,8 +30,8 @@ function HomePage(props: HomePageProps) {
 }
 
 export async function getStaticProps() {
-  const categories = await api.getAllCategories();
-  const lastRecords = await api.getLastRecords();
+  const lastRecords = getAllRecords();
+  const categories = getAllCategories();
 
   return {
     props: { categories, lastRecords },

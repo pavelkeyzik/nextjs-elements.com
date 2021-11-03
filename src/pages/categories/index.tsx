@@ -1,10 +1,10 @@
 import { Container, Heading } from "@theme-ui/components";
-import { api } from "../../api";
 import { CaregoryCards } from "../../components/CategoryCards";
-import { CategoryModel } from "../../typings/models/CategoryModel";
+import { getAllCategories } from "../../lib/api/categories";
+import { CategoryWithRecordsDTO } from "../../lib/dto/CategoryDTO";
 
 type CategoriesPageProps = {
-  categories: CategoryModel[];
+  categories: CategoryWithRecordsDTO[];
 };
 
 function CategoriesPage(props: CategoriesPageProps) {
@@ -19,7 +19,7 @@ function CategoriesPage(props: CategoriesPageProps) {
 }
 
 export async function getStaticProps() {
-  const categories = await api.getAllCategories();
+  const categories = getAllCategories();
 
   return {
     props: { categories },

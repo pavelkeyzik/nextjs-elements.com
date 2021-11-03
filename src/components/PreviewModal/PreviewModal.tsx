@@ -1,12 +1,13 @@
 import { Box, IconButton } from "@theme-ui/components";
 import { X } from "styled-icons/feather";
 import { api } from "../../api";
+import { MediaDTO } from "../../lib/dto/MediaDTO";
 import { MediaModel } from "../../typings/models/MediaModel";
 
 type PreviewModalProps = {
   visible?: boolean;
   onClose?: () => void;
-  selectedMedia?: MediaModel;
+  selectedMedia?: MediaDTO;
 };
 
 function PreviewModal(props: PreviewModalProps) {
@@ -60,10 +61,9 @@ function PreviewModal(props: PreviewModalProps) {
           <img
             style={{
               objectFit: "contain",
-              width: "100%",
-              maxWidth: props.selectedMedia?.width,
+              maxWidth: "100%",
             }}
-            src={api.getImageLink(props.selectedMedia?.url)}
+            src={props.selectedMedia}
           />
         </Box>
       </Box>

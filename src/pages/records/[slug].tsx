@@ -9,16 +9,16 @@ import {
   Link,
 } from "@theme-ui/components";
 import ReactMarkdown from "react-markdown";
-import { api } from "../../api";
 import { RecordCards } from "../../components/RecordCards";
 import { SidebarCategories } from "../../components/SidebarCategories";
 import { SidebarSubscribeCard } from "../../components/SidebarSubscribeCard";
-import { RecordModel } from "../../typings/models/RecordModel";
 import { usePreviewModal, PreviewModal } from "../../components/PreviewModal";
+import { getAllRecords, getRecordBySlug } from "../../lib/api/records";
+import { RecordDTO } from "../../lib/dto/RecordDTO";
 
 type RecordInformationPageProps = {
-  record: RecordModel;
-  lastRecords: RecordModel[];
+  record: RecordDTO;
+  lastRecords: RecordDTO[];
 };
 
 function RecordInformationPage(props: RecordInformationPageProps) {
@@ -37,7 +37,7 @@ function RecordInformationPage(props: RecordInformationPageProps) {
       <Grid columns={["1fr", "1fr", "2fr 1fr"]} gap={5}>
         <Box>
           <Heading as="h1" my={3}>
-            {props.record.name}
+            {props.record.title}
           </Heading>
           <Box
             sx={{
@@ -49,7 +49,7 @@ function RecordInformationPage(props: RecordInformationPageProps) {
             }}
           >
             <Image
-              src={api.getImageLink(props.record.cover?.formats?.large?.url)}
+              src={props.record.cover_url}
               sx={{
                 verticalAlign: "middle",
               }}
@@ -62,14 +62,14 @@ function RecordInformationPage(props: RecordInformationPageProps) {
               mt: 3,
             }}
           >
-            {props.record.media.map((media) => {
+            {props.record.media.map((media, index) => {
               function openPreview() {
                 modalState.openPreviews(media);
               }
 
               return (
                 <Box
-                  key={media._id}
+                  key={index}
                   style={{
                     borderRadius: 4,
                     overflow: "hidden",
@@ -77,10 +77,7 @@ function RecordInformationPage(props: RecordInformationPageProps) {
                   }}
                   onClick={openPreview}
                 >
-                  <AspectImage
-                    ratio={16 / 9}
-                    src={api.getImageLink(media.formats?.small?.url)}
-                  />
+                  <AspectImage ratio={16 / 9} src={media} />
                 </Box>
               );
             })}
@@ -94,7 +91,7 @@ function RecordInformationPage(props: RecordInformationPageProps) {
                       <img
                         {...props}
                         style={{ objectFit: "contain", width: "100%" }}
-                        src={api.getImageLink(props.src)}
+                        src={props.src}
                       />
                     </Box>
                   );
@@ -106,7 +103,7 @@ function RecordInformationPage(props: RecordInformationPageProps) {
                 },
               }}
             >
-              {props.record.text}
+              {props.record.content}
             </ReactMarkdown>
           </Box>
         </Box>
@@ -135,19 +132,19 @@ function RecordInformationPage(props: RecordInformationPageProps) {
 }
 
 export async function getStaticPaths() {
-  const records = await api.getAllRecords();
+  const records = getAllRecords();
 
   // Get the paths we want to pre-render based on posts
   const paths = records.map((record) => ({
-    params: { id: record._id },
+    params: { slug: record.slug },
   }));
 
   return { paths, fallback: "blocking" };
 }
 
-export async function getStaticProps({ params }: any) {
-  const record = await api.getRecordById(params.id);
-  const lastRecords = await api.getLastRecords();
+export async function getStaticProps({ params }: { params: { slug: string } }) {
+  const record = getRecordBySlug(params.slug);
+  const lastRecords = getAllRecords().slice(0, 4);
 
   return {
     props: { record, lastRecords },

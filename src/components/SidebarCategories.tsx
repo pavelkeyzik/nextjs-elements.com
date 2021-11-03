@@ -1,10 +1,11 @@
 import { Flex, Heading, Link } from "@theme-ui/components";
-import { CategoryModel } from "../typings/models/CategoryModel";
+import { formatCategoryName } from "../lib/formatters";
+import { CategoryDTO } from "../lib/dto/CategoryDTO";
 import { RouterLink } from "./RouterLink";
 
 type SidebarCategoriesProps = {
   title: string;
-  categories: CategoryModel[];
+  categories: CategoryDTO[];
 };
 
 function SidebarCategories(props: SidebarCategoriesProps) {
@@ -15,10 +16,8 @@ function SidebarCategories(props: SidebarCategoriesProps) {
       </Heading>
       {props.categories.map((category) => {
         return (
-          <RouterLink href={`/categories/${category._id}`}>
-            <Link my={2} key={category._id}>
-              {category.name}
-            </Link>
+          <RouterLink key={category} href={`/categories/${category}`}>
+            <Link my={2}>{formatCategoryName(category)}</Link>
           </RouterLink>
         );
       })}

@@ -1,10 +1,10 @@
 import { Container, Heading } from "@theme-ui/components";
-import { api } from "../../api";
 import { RecordCards } from "../../components/RecordCards";
-import { CategoryModel } from "../../typings/models/CategoryModel";
+import { getAllCategories, getCategoryByName } from "../../lib/api/categories";
+import { CategoryWithRecordsDTO } from "../../lib/dto/CategoryDTO";
 
 type RecordsByCategoryPageProps = {
-  category: CategoryModel;
+  category: CategoryWithRecordsDTO;
 };
 
 function RecordsByCategoryPage(props: RecordsByCategoryPageProps) {
@@ -27,19 +27,18 @@ function RecordsByCategoryPage(props: RecordsByCategoryPageProps) {
 }
 
 export async function getStaticPaths() {
-  const categories = await api.getAllCategories();
+  const categories = getAllCategories();
 
   // Get the paths we want to pre-render based on posts
   const paths = categories.map((category) => ({
-    params: { id: category._id },
+    params: { name: category.name },
   }));
 
   return { paths, fallback: "blocking" };
 }
 
-export async function getStaticProps({ params }: any) {
-  console.log(params.id);
-  const category = await api.getCategory(params.id);
+export async function getStaticProps({ params }: { params: { name: string } }) {
+  const category = getCategoryByName(params.name);
 
   return {
     props: { category },

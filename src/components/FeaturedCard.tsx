@@ -1,10 +1,10 @@
 import { Box, Grid, Heading, Paragraph, Badge, AspectImage } from "theme-ui";
 import { api } from "../api";
-import { RecordModel } from "../typings/models/RecordModel";
+import { RecordDTO } from "../lib/dto/RecordDTO";
 import { RouterLink } from "./RouterLink";
 
 type FeaturedCardProps = {
-  record: RecordModel;
+  record: RecordDTO;
 };
 
 function FeaturedCard(props: FeaturedCardProps) {
@@ -14,7 +14,7 @@ function FeaturedCard(props: FeaturedCardProps) {
 
   return (
     <Box mb={5}>
-      <RouterLink href={`/records/${props.record._id}`}>
+      <RouterLink href={`/records/${props.record.slug}`}>
         <Grid
           gap={4}
           columns={["1fr", "1fr", "1fr 1fr"]}
@@ -36,7 +36,7 @@ function FeaturedCard(props: FeaturedCardProps) {
         >
           <Box>
             <Badge bg="primary">Featured Item</Badge>
-            <Heading mt={3}>{props.record.name}</Heading>
+            <Heading mt={3}>{props.record.title}</Heading>
             <Paragraph mt={2}>{props.record.description}</Paragraph>
           </Box>
           <Box
@@ -45,10 +45,7 @@ function FeaturedCard(props: FeaturedCardProps) {
               overflow: "hidden",
             }}
           >
-            <AspectImage
-              ratio={16 / 9}
-              src={api.getImageLink(props.record.cover?.formats?.medium?.url)}
-            />
+            <AspectImage ratio={16 / 9} src={props.record.cover_url} />
           </Box>
         </Grid>
       </RouterLink>

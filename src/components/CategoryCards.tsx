@@ -1,9 +1,10 @@
-import { Badge, Box, Card, Flex, Grid, Text } from "@theme-ui/components";
-import { CategoryModel } from "../typings/models/CategoryModel";
+import { Badge, Card, Flex, Grid, Text } from "@theme-ui/components";
+import { CategoryWithRecordsDTO } from "../lib/dto/CategoryDTO";
+import { formatCategoryName } from "../lib/formatters";
 import { RouterLink } from "./RouterLink";
 
 type CaregoryCardsProps = {
-  categories: CategoryModel[];
+  categories: CategoryWithRecordsDTO[];
 };
 
 function CaregoryCards(props: CaregoryCardsProps) {
@@ -18,7 +19,7 @@ function CaregoryCards(props: CaregoryCardsProps) {
     >
       {props.categories.map((category) => {
         return (
-          <RouterLink key={category._id} href={`/categories/${category._id}`}>
+          <RouterLink key={category.name} href={`/categories/${category.name}`}>
             <Card
               sx={{
                 width: "100%",
@@ -36,7 +37,9 @@ function CaregoryCards(props: CaregoryCardsProps) {
                 p={3}
                 sx={{ justifyContent: "space-between", alignItems: "center" }}
               >
-                <Text variant="heading">{category.name}</Text>
+                <Text variant="heading">
+                  {formatCategoryName(category.name)}
+                </Text>
                 <Badge variant="secondary">{category.records.length}</Badge>
               </Flex>
             </Card>

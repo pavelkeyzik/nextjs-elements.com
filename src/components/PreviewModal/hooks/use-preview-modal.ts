@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { MediaModel } from "../../../typings/models/MediaModel";
+import { MediaDTO } from "../../../lib/dto/MediaDTO";
 
-function usePreviewModal(media: MediaModel[]) {
+function usePreviewModal(media: MediaDTO[]) {
   const [visible, setVisible] = useState(false);
-  const [selectedMedia, setSelectedMedia] = useState<MediaModel>();
+  const [selectedMedia, setSelectedMedia] = useState<MediaDTO>();
 
-  function openPreviews(selectedMedia: MediaModel) {
+  function openPreviews(selectedMedia: MediaDTO) {
     setVisible(true);
     setSelectedMedia(selectedMedia);
   }
