@@ -37,9 +37,6 @@ function RecordInformationPage(props: RecordInformationPageProps) {
     <Container>
       <Grid columns={["1fr", "1fr", "2fr 1fr"]} gap={5}>
         <Box>
-          <Heading as="h1" my={3}>
-            {props.record.title}
-          </Heading>
           <Box
             sx={{
               overflow: "hidden",
@@ -83,6 +80,10 @@ function RecordInformationPage(props: RecordInformationPageProps) {
               );
             })}
           </Grid>
+
+          <Heading as="h1" mt={4}>
+            {props.record.title}
+          </Heading>
           <Box mt={4}>
             <ReactMarkdown
               components={{
