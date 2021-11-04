@@ -11,6 +11,7 @@ import {
 } from "@theme-ui/components";
 import Image from "next/image";
 import { Mail } from "styled-icons/feather";
+import { config } from "../config";
 
 function Hero() {
   return (
@@ -30,26 +31,28 @@ function Hero() {
           <Paragraph>
             Discover the best free resources for your Next.js project
           </Paragraph>
-          <Flex mt={4} sx={{ maxWidth: 400 }}>
-            <Input
-              sx={{
-                borderTopRightRadius: 0,
-                borderBottomRightRadius: 0,
-                borderRightWidth: 0,
-              }}
-              placeholder="example@domain.com"
-            />
-            <Button
-              sx={{
-                flexShrink: 0,
-                borderTopLeftRadius: 0,
-                borderBottomLeftRadius: 0,
-              }}
-            >
-              <Mail width="16px" strokeWidth={2} />
-              <Text ml={2}>Subscribe</Text>
-            </Button>
-          </Flex>
+          {config.features.subscribeToNewsLetterEnabled ? (
+            <Flex mt={4} sx={{ maxWidth: 400 }}>
+              <Input
+                sx={{
+                  borderTopRightRadius: 0,
+                  borderBottomRightRadius: 0,
+                  borderRightWidth: 0,
+                }}
+                placeholder="example@domain.com"
+              />
+              <Button
+                sx={{
+                  flexShrink: 0,
+                  borderTopLeftRadius: 0,
+                  borderBottomLeftRadius: 0,
+                }}
+              >
+                <Mail width="16px" strokeWidth={2} />
+                <Text ml={2}>Subscribe</Text>
+              </Button>
+            </Flex>
+          ) : null}
         </Box>
         <Box
           sx={{

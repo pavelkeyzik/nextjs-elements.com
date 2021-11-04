@@ -15,6 +15,7 @@ import { SidebarSubscribeCard } from "../../components/SidebarSubscribeCard";
 import { usePreviewModal, PreviewModal } from "../../components/PreviewModal";
 import { getAllRecords, getRecordBySlug } from "../../lib/api/records";
 import { RecordDTO } from "../../lib/dto/RecordDTO";
+import { config } from "../../config";
 
 type RecordInformationPageProps = {
   record: RecordDTO;
@@ -112,9 +113,11 @@ function RecordInformationPage(props: RecordInformationPageProps) {
             title="Categories"
             categories={props.record.categories}
           />
-          <Box mt={4}>
-            <SidebarSubscribeCard />
-          </Box>
+          {config.features.subscribeToNewsLetterEnabled ? (
+            <Box mt={4}>
+              <SidebarSubscribeCard />
+            </Box>
+          ) : null}
         </Box>
       </Grid>
       <Divider my={4} />

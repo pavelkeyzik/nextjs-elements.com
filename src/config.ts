@@ -1,6 +1,7 @@
 const config = {
   features: {
     submitElementEnabled: false,
+    subscribeToNewsLetterEnabled: false,
   },
 };
 

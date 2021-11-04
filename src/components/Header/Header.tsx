@@ -9,6 +9,7 @@ import {
   IconButton,
 } from "@theme-ui/components";
 import { Upload, Menu, X } from "styled-icons/feather";
+import { config } from "../../config";
 import { RouterLink } from "../RouterLink";
 import { NavigationMobile } from "./NavigationMobile";
 import { useHeader } from "./use-header";
@@ -50,12 +51,14 @@ function Header() {
               );
             })}
           </Flex>
-          <RouterLink href="/submit-element">
-            <Button as="div" sx={{ flexShrink: 0 }}>
-              <Upload width="16px" strokeWidth={2} />
-              <Text ml={2}>Submit Element</Text>
-            </Button>
-          </RouterLink>
+          {config.features.submitElementEnabled ? (
+            <RouterLink href="/submit-element">
+              <Button as="div" sx={{ flexShrink: 0 }}>
+                <Upload width="16px" strokeWidth={2} />
+                <Text ml={2}>Submit Element</Text>
+              </Button>
+            </RouterLink>
+          ) : null}
         </Box>
         <Box
           sx={{
@@ -87,14 +90,19 @@ function Header() {
                     </Box>
                   );
                 })}
-                <Flex sx={{ flexShrink: 0 }}>
-                  <RouterLink href="/submit-element" onClick={state.closeMenu}>
-                    <Button as="div">
-                      <Upload width="16px" strokeWidth={2} />
-                      <Text ml={2}>Submit Element</Text>
-                    </Button>
-                  </RouterLink>
-                </Flex>
+                {config.features.submitElementEnabled ? (
+                  <Flex sx={{ flexShrink: 0 }}>
+                    <RouterLink
+                      href="/submit-element"
+                      onClick={state.closeMenu}
+                    >
+                      <Button as="div">
+                        <Upload width="16px" strokeWidth={2} />
+                        <Text ml={2}>Submit Element</Text>
+                      </Button>
+                    </RouterLink>
+                  </Flex>
+                ) : null}
               </Flex>
             </Container>
           </NavigationMobile>
