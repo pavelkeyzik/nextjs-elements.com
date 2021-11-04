@@ -43,8 +43,8 @@ function Header() {
             {state.menuItems.map((menuItem, index) => {
               return (
                 <Box mr={3} key={index}>
-                  <RouterLink href={menuItem.href}>
-                    <Link variant="nav">{menuItem.title}</Link>
+                  <RouterLink variant="nav" href={menuItem.href}>
+                    {menuItem.title}
                   </RouterLink>
                 </Box>
               );

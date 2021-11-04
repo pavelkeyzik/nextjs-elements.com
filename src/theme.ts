@@ -36,6 +36,7 @@ const theme: Theme = {
         color: "text",
         textDecoration: "none",
         transition: "color .2s",
+        cursor: "pointer",
 
         ":hover": {
           color: "primary",
