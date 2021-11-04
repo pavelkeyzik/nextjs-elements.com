@@ -23,8 +23,8 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "build": "NEXT_PUBLIC_APP_TYPE=production next build",
+    "start": "NEXT_PUBLIC_APP_TYPE=production next start"
   },
   "eslintConfig": {
     "extends": [
