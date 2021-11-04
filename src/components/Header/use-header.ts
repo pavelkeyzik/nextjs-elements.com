@@ -6,7 +6,7 @@ const menuItems = [
     href: "/categories",
   },
   {
-    title: "Resources",
+    title: "Templates",
     href: "/records",
   },
 ];

@@ -12,7 +12,7 @@ function RecordsPage(props: RecordsPageProps) {
   return (
     <Container>
       <Heading as="h1" mb={3}>
-        Resources
+        Templates
       </Heading>
       <FeaturedCard record={props.records[0]} />
       <RecordCards records={props.records.slice(1)} />

@@ -18,7 +18,7 @@ function HomePage(props: HomePageProps) {
     <div>
       <Hero />
       <Container py={4}>
-        <Section title="Latest Next.js Resources" viewAllLink="/records">
+        <Section title="Latest Next.js Templates" viewAllLink="/records">
           <RecordCards records={props.lastRecords} />
         </Section>
         <Section title="Categories" viewAllLink="/categories">

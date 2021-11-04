@@ -25,11 +25,10 @@ function Hero() {
       >
         <Box>
           <Heading as="h1" mb={3}>
-            Free Next.js Resources, Tools and Templates
+            Free Next.js Templates, Boilerplates, and Starter Kits
           </Heading>
           <Paragraph>
-            Discover the best free UI Kits, Icons, Templates, Mockups, Style
-            Guides, Illustrations, and more resources for Next.js
+            Discover the best free resources for your Next.js project
           </Paragraph>
           <Flex mt={4} sx={{ maxWidth: 400 }}>
             <Input
