@@ -1,6 +1,6 @@
 ---
 title: Nextjs Starter (Tailwind CSS)
-description: Next.js Boilerplate is a starter code for your Next js project by putting developer experience first . Made with Next.js, TypeScript, ESLint, Prettier, Husky, Lint-Staged, VSCode, Netlify, PostCSS, Tailwind CSS.
+description: Next.js Boilerplate is a starter code for your Next js project by putting developer experience first. Made with Next.js, TypeScript, ESLint, Prettier, Husky, Lint-Staged, VSCode, Netlify, PostCSS, Tailwind CSS.
 cover_url: /assets/content/templates/tailwind-starter/cover.jpg
 media:
   - /assets/content/templates/tailwind-starter/long-preview.png
@@ -9,14 +9,7 @@ categories:
   - blog
 ---
 
-### Installation guide
-
-```sh
-git clone --depth=1 https://github.com/ixartz/Next-js-Boilerplate.git my-project-name
-cd my-project-name
-npm install
-npm run dev
-```
+Boilerplate and Starter for Next.js, Tailwind CSS and TypeScript. Made with developer experience first: Next.js, TypeScript, ESLint, Prettier, Husky, Lint-Staged, VSCode, Netlify, PostCSS, Tailwind CSS.
 
 ### More about the project
 
