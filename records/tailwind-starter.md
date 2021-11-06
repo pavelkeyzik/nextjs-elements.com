@@ -11,6 +11,6 @@ categories:
 
 Boilerplate and Starter for Next.js, Tailwind CSS and TypeScript. Made with developer experience first: Next.js, TypeScript, ESLint, Prettier, Husky, Lint-Staged, VSCode, Netlify, PostCSS, Tailwind CSS.
 
-### More about the project
+## More about the project
 
 [https://github.com/ixartz/Next-js-Boilerplate](https://github.com/ixartz/Next-js-Boilerplate)

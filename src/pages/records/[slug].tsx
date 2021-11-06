@@ -37,6 +37,9 @@ function RecordInformationPage(props: RecordInformationPageProps) {
     <Container>
       <Grid columns={["1fr", "1fr", "2fr 1fr"]} gap={5}>
         <Box>
+          <Heading as="h1" mb={2}>
+            {props.record.title}
+          </Heading>
           <Box
             sx={{
               overflow: "hidden",
@@ -53,10 +56,13 @@ function RecordInformationPage(props: RecordInformationPageProps) {
               }}
             />
           </Box>
+          <Heading as="h2" mt={4}>
+            Previews
+          </Heading>
           <Grid
             sx={{
-              gap: 4,
-              gridTemplateColumns: "repeat(4, 1fr)",
+              gap: 2,
+              gridTemplateColumns: "repeat(5, 1fr)",
               mt: 3,
             }}
           >
@@ -68,10 +74,11 @@ function RecordInformationPage(props: RecordInformationPageProps) {
               return (
                 <Box
                   key={index}
-                  style={{
+                  sx={{
                     borderRadius: 4,
                     overflow: "hidden",
                     cursor: "pointer",
+                    bg: "muted",
                   }}
                   onClick={openPreview}
                 >
@@ -80,11 +87,10 @@ function RecordInformationPage(props: RecordInformationPageProps) {
               );
             })}
           </Grid>
-
-          <Heading as="h1" mt={4}>
-            {props.record.title}
+          <Heading as="h2" mt={4}>
+            Description
           </Heading>
-          <Box mt={4}>
+          <Box>
             <ReactMarkdown
               components={{
                 img(props) {
