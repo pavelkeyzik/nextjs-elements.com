@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Button, Flex, Heading, Input, Text } from "@theme-ui/components";
+import NewsletterIllustration from "../assets/illustrations/newsletter.svg";
 import { Mail } from "styled-icons/feather";
 
 function SidebarSubscribeCard() {
@@ -16,11 +17,7 @@ function SidebarSubscribeCard() {
         borderColor: "muted",
       }}
     >
-      <Image
-        src="/assets/illustrations/newsletter.svg"
-        width="160px"
-        height="160px"
-      />
+      <NewsletterIllustration width="160px" height="160px" />
       <Heading mt={3}>Subscribe To Our Newsletter</Heading>
       <Input mt={3} placeholder="example@domain.com" />
       <Button mt={2} sx={{ width: "100%" }}>

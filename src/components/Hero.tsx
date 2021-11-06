@@ -11,6 +11,7 @@ import {
 } from "@theme-ui/components";
 import Image from "next/image";
 import { Mail } from "styled-icons/feather";
+import HeroIllustration from "../assets/illustrations/hero.svg";
 import { config } from "../config";
 
 function Hero() {
@@ -62,11 +63,7 @@ function Hero() {
             height: "100%",
           }}
         >
-          <Image
-            src="/assets/illustrations/hero.svg"
-            width={400}
-            height={400}
-          />
+          <HeroIllustration width="400px" height="400px" />
         </Box>
       </Grid>
     </Container>
