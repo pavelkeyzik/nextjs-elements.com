@@ -1,3 +1,4 @@
+import React from "react";
 import {
   AspectImage,
   Box,
@@ -24,6 +25,7 @@ type RecordInformationPageProps = {
 
 function RecordInformationPage(props: RecordInformationPageProps) {
   const modalState = usePreviewModal(props.record.media);
+  const isHavingMedia = props.record.media && props.record.media.length > 0;
 
   if (!props.record) {
     return (
@@ -56,37 +58,42 @@ function RecordInformationPage(props: RecordInformationPageProps) {
               }}
             />
           </Box>
-          <Heading as="h2" mt={4}>
-            Previews
-          </Heading>
-          <Grid
-            sx={{
-              gap: 2,
-              gridTemplateColumns: "repeat(5, 1fr)",
-              mt: 3,
-            }}
-          >
-            {props.record.media.map((media, index) => {
-              function openPreview() {
-                modalState.openPreviews(media);
-              }
+          {isHavingMedia ? (
+            <React.Fragment>
+              <Heading as="h2" mt={4}>
+                Previews
+              </Heading>
+              <Grid
+                sx={{
+                  gap: 2,
+                  gridTemplateColumns: "repeat(5, 1fr)",
+                  mt: 3,
+                }}
+              >
+                {props.record.media.map((media, index) => {
+                  function openPreview() {
+                    modalState.openPreviews(media);
+                  }
 
-              return (
-                <Box
-                  key={index}
-                  sx={{
-                    borderRadius: 4,
-                    overflow: "hidden",
-                    cursor: "pointer",
-                    bg: "muted",
-                  }}
-                  onClick={openPreview}
-                >
-                  <AspectImage ratio={16 / 9} src={media} />
-                </Box>
-              );
-            })}
-          </Grid>
+                  return (
+                    <Box
+                      key={index}
+                      sx={{
+                        borderRadius: 4,
+                        overflow: "hidden",
+                        cursor: "pointer",
+                        bg: "muted",
+                      }}
+                      onClick={openPreview}
+                    >
+                      <AspectImage ratio={16 / 9} src={media} />
+                    </Box>
+                  );
+                })}
+              </Grid>
+            </React.Fragment>
+          ) : null}
+
           <Heading as="h2" mt={4}>
             Description
           </Heading>
