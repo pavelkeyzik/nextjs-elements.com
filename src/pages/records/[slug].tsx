@@ -93,6 +93,9 @@ function RecordInformationPage(props: RecordInformationPageProps) {
                         overflow: "hidden",
                         cursor: "pointer",
                         bg: "muted",
+                        borderWidth: 1,
+                        borderColor: "muted",
+                        borderStyle: "solid",
                       }}
                       onClick={openPreview}
                     >

@@ -27,7 +27,7 @@ function Hero() {
       >
         <Box>
           <Heading as="h1" mb={3}>
-            Free Next.js Templates, Boilerplates, and Starter Kits
+            Awesome Next.js Templates, Boilerplates, and Starter Kits
           </Heading>
           <Paragraph>
             Discover the best free resources for your Next.js project

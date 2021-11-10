@@ -13,8 +13,13 @@ function Footer() {
     <Box mt={2}>
       <Container py={4}>
         <Flex sx={{ justifyContent: "space-between", alignItems: "center" }}>
-          <Text color="gray">Copyright &copy; 2021</Text>
-          <Flex>
+          <Text color="gray" sx={{ fontSize: 1 }}>
+            Copyright &copy; 2021
+          </Text>
+          <Flex sx={{ alignItems: "center" }}>
+            <Text sx={{ color: "gray", mr: 2, fontSize: 1 }}>
+              Developed by{" "}
+            </Text>
             <Box mr={2}>
               <Link href="https://twitter.com/pavelkeyzik" target="_blank">
                 <IconButton as="div">
