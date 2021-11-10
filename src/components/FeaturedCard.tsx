@@ -1,5 +1,14 @@
-import { Box, Grid, Heading, Paragraph, Badge, AspectImage } from "theme-ui";
+import {
+  Box,
+  Grid,
+  Heading,
+  Paragraph,
+  Badge,
+  AspectImage,
+  Text,
+} from "theme-ui";
 import { RecordDTO } from "../lib/dto/RecordDTO";
+import { formatRecordDate } from "../lib/formatters";
 import { RouterLink } from "./RouterLink";
 
 type FeaturedCardProps = {
@@ -37,6 +46,9 @@ function FeaturedCard(props: FeaturedCardProps) {
             <Badge bg="primary">Featured Item</Badge>
             <Heading mt={3}>{props.record.title}</Heading>
             <Paragraph mt={2}>{props.record.description}</Paragraph>
+            <Box sx={{ mt: 3 }}>
+              <Text variant="date">{formatRecordDate(props.record.date)}</Text>
+            </Box>
           </Box>
           <Box
             style={{

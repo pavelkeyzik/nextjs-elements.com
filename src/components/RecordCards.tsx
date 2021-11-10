@@ -1,5 +1,6 @@
 import { AspectImage, Box, Card, Grid, Text } from "@theme-ui/components";
 import { RecordDTO } from "../lib/dto/RecordDTO";
+import { formatRecordDate } from "../lib/formatters";
 import { RouterLink } from "./RouterLink";
 
 type RecordCardsProps = {
@@ -30,11 +31,27 @@ function RecordCards(props: RecordCardsProps) {
                 ":hover": {
                   transform: "translateY(-4px)",
                 },
+                display: "flex",
+                flexDirection: "column",
               }}
             >
               <AspectImage ratio={16 / 9} src={record.cover_url} />
-              <Box p={3}>
+              <Box
+                sx={{
+                  px: 3,
+                  pt: 3,
+                  pb: 2,
+                }}
+              >
                 <Text variant="heading">{record.title}</Text>
+              </Box>
+              <Box
+                sx={{
+                  px: 3,
+                  pb: 3,
+                }}
+              >
+                <Text variant="date">{formatRecordDate(record.date)}</Text>
               </Box>
             </Card>
           </RouterLink>

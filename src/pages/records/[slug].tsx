@@ -4,12 +4,15 @@ import {
   Box,
   Container,
   Divider,
+  Flex,
   Grid,
   Heading,
   Image,
   Link,
+  Text,
 } from "@theme-ui/components";
 import ReactMarkdown from "react-markdown";
+import { Calendar } from "styled-icons/feather";
 import { RecordCards } from "../../components/RecordCards";
 import { SidebarCategories } from "../../components/SidebarCategories";
 import { SidebarSubscribeCard } from "../../components/SidebarSubscribeCard";
@@ -17,6 +20,7 @@ import { usePreviewModal, PreviewModal } from "../../components/PreviewModal";
 import { getAllRecords, getRecordBySlug } from "../../lib/api/records";
 import { RecordDTO } from "../../lib/dto/RecordDTO";
 import { config } from "../../config";
+import { formatRecordDate } from "../../lib/formatters";
 
 type RecordInformationPageProps = {
   record: RecordDTO;
@@ -39,9 +43,6 @@ function RecordInformationPage(props: RecordInformationPageProps) {
     <Container>
       <Grid columns={["1fr", "1fr", "2fr 1fr"]} gap={5}>
         <Box>
-          <Heading as="h1" mb={2}>
-            {props.record.title}
-          </Heading>
           <Box
             sx={{
               overflow: "hidden",
@@ -58,6 +59,15 @@ function RecordInformationPage(props: RecordInformationPageProps) {
               }}
             />
           </Box>
+          <Heading as="h1" mt={3} mb={2}>
+            {props.record.title}
+          </Heading>
+          <Text variant="date" sx={{ display: "flex", alignItems: "center" }}>
+            <Calendar width={16} strokeWidth={2} />
+            <Text sx={{ ml: 2 }}>
+              {formatRecordDate(props.record.date, "long")}
+            </Text>
+          </Text>
           {isHavingMedia ? (
             <React.Fragment>
               <Heading as="h2" mt={4}>

@@ -159,6 +159,10 @@ const theme: Theme = {
       letterSpacing: "-0.03em",
       mt: 3,
     },
+    date: {
+      color: "gray",
+      fontSize: 1,
+    },
   },
   styles: {
     Container: {

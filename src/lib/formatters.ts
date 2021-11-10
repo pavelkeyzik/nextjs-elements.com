@@ -9,4 +9,12 @@ function formatCategoryName(category: string) {
   return firstLetter.toUpperCase() + restLetters;
 }
 
-export { formatCategoryName };
+function formatRecordDate(value: string, type: "short" | "long" = "short") {
+  return new Date(value).toLocaleDateString("en", {
+    day: "2-digit",
+    month: type,
+    year: "numeric",
+  });
+}
+
+export { formatCategoryName, formatRecordDate };
