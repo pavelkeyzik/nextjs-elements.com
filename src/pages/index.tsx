@@ -30,8 +30,8 @@ function HomePage(props: HomePageProps) {
 }
 
 export async function getStaticProps() {
-  const lastRecords = getAllRecords();
-  const categories = getAllCategories();
+  const lastRecords = getAllRecords({ limit: 4 });
+  const categories = getAllCategories({ limit: 4 });
 
   return {
     props: { categories, lastRecords },

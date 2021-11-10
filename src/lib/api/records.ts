@@ -29,11 +29,19 @@ function getRecordBySlug(slug: string) {
   return result;
 }
 
-function getAllRecords() {
+type QueryOptions = {
+  limit?: number;
+};
+
+function getAllRecords(query: QueryOptions = {}) {
   const slugs = getRecordSlugs();
   const records = slugs
     .map((slug) => getRecordBySlug(slug))
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+
+  if (query.limit) {
+    return records.slice(0, query.limit);
+  }
 
   return records;
 }

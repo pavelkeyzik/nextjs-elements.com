@@ -17,8 +17,20 @@ function getCategoryNames(): CategoryDTO[] {
     }, []);
 }
 
-function getAllCategories() {
-  return getCategoryNames().map(getCategoryByName);
+type QueryOptions = {
+  limit?: number;
+};
+
+function getAllCategories(query: QueryOptions = {}) {
+  const categories = getCategoryNames()
+    .map(getCategoryByName)
+    .sort((a, b) => b.records.length - a.records.length);
+
+  if (query.limit) {
+    return categories.slice(0, query.limit);
+  }
+
+  return categories;
 }
 
 function getCategoryByName(categoryName: string): CategoryWithRecordsDTO {
