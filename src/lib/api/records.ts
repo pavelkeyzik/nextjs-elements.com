@@ -23,7 +23,7 @@ function getRecordBySlug(slug: string) {
     cover_url: data.cover_url,
     date: data.date,
     description: data.description,
-    media: data.media,
+    media: data.media || [],
   };
 
   return result;
